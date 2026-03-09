@@ -715,8 +715,8 @@ render();
             <input class="form-input" type="text" id="formClub" placeholder="e.g. Diambars FC" required>
           </div>
           <div class="form-group">
-            <label class="form-label">Age <span class="required">*</span></label>
-            <input class="form-input" type="number" id="formAge" placeholder="e.g. 17" min="10" max="25" required>
+            <label class="form-label">Year of Birth <span class="required">*</span></label>
+            <input class="form-input" type="number" id="formYear" placeholder="e.g. 2008" min="2000" max="2015" required>
           </div>
         </div>
         <div class="form-error hidden" id="formError"></div>
@@ -760,27 +760,24 @@ async function submitPlayer(e) {
 
   const name = document.getElementById("formName").value.trim();
   const club = document.getElementById("formClub").value.trim();
-  const age = document.getElementById("formAge").value.trim();
+  const year = document.getElementById("formYear").value.trim();
 
   // Validate
   if (!name || name.length < 2) { showFormError("Player name must be at least 2 characters."); return; }
   if (!club) { showFormError("Current club is required."); return; }
-  const a = parseInt(age);
-  if (!a || a < 10 || a > 25) { showFormError("Age must be between 10 and 25."); return; }
-
-  // Calculate approximate birth year from age
-  const birthYear = new Date().getFullYear() - a;
+  const y = parseInt(year);
+  if (!y || y < 2000 || y > 2015) { showFormError("Year of birth must be between 2000 and 2015."); return; }
 
   btn.disabled = true;
   btn.textContent = "SUBMITTING...";
 
   // Build issue body — bot will auto-detect country and position
   const body = "### Player Name\n\n" + name +
-    "\n\n### Birth Year\n\n" + birthYear +
+    "\n\n### Birth Year\n\n" + year +
     "\n\n### Country\n\n_Auto-detect_" +
     "\n\n### Position\n\n_Auto-detect_" +
     "\n\n### Current Club\n\n" + club +
-    "\n\n### Additional Context (optional)\n\n" + "Age provided: " + age;
+    "\n\n### Additional Context (optional)\n\n_No response_";
 
   try {
     const resp = await fetch("https://api.github.com/repos/" + REPO_OWNER + "/" + REPO_NAME + "/issues", {
