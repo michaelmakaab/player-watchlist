@@ -708,7 +708,7 @@ render();
           </div>
           <div class="form-group">
             <label class="form-label">Year of Birth <span class="required">*</span></label>
-            <input class="form-input" type="number" id="formYear" placeholder="e.g. 2008" min="2000" max="2015" required>
+            <input class="form-input" type="number" id="formYear" placeholder="e.g. 2008" required>
           </div>
         </div>
         <div class="form-error hidden" id="formError"></div>
@@ -758,7 +758,7 @@ async function submitPlayer(e) {
   if (!name || name.length < 2) { showFormError("Player name must be at least 2 characters."); return; }
   if (!club) { showFormError("Current club is required."); return; }
   const y = parseInt(year);
-  if (!y || y < 2000 || y > 2015) { showFormError("Year of birth must be between 2000 and 2015."); return; }
+  if (!y || y < 1900 || y > new Date().getFullYear()) { showFormError("Please enter a valid year of birth."); return; }
 
   btn.disabled = true;
   btn.textContent = "SUBMITTING...";
