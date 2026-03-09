@@ -105,12 +105,11 @@ if (!birthYear || birthYear < 2000 || birthYear > 2015) {
   console.error(JSON.stringify({ error: "Invalid birth year (must be 2000-2015)" }));
   process.exit(1);
 }
-if (!COUNTRY_FLAGS[country]) {
+// Country and position are optional — bot auto-detects during verification
+const autoDetectCountry = !country || country === "_Auto-detect_";
+const autoDetectPosition = !position || position === "_Auto-detect_";
+if (country && !autoDetectCountry && !COUNTRY_FLAGS[country]) {
   console.error(JSON.stringify({ error: `Unknown country: "${country}"` }));
-  process.exit(1);
-}
-if (!position) {
-  console.error(JSON.stringify({ error: "Position is required" }));
   process.exit(1);
 }
 if (!currentClub || currentClub.length < 2) {
@@ -141,8 +140,8 @@ function checkDuplicate() {
     if (normExisting === normInput) return p;
     // Alt spelling match
     if ((p.altSpellings || []).some(alt => normalizeName(alt) === normInput)) return p;
-    // Same country + same birth year + high name similarity
-    if (p.country === country && p.birthYear === birthYear) {
+    // Same country + same birth year + high name similarity (skip if country unknown)
+    if (!autoDetectCountry && p.country === country && p.birthYear === birthYear) {
       const words1 = new Set(normInput.split(/\s+/));
       const words2 = new Set(normExisting.split(/\s+/));
       const overlap = [...words1].filter(w => words2.has(w)).length;
@@ -194,13 +193,16 @@ async function withRetry(fn, label, maxRetries = 3) {
 
 // ── Phase 1: Verify player identity ───────────────────────────────────
 async function phase1Verify(client) {
+  const countryHint = autoDetectCountry ? "Unknown — please determine from search results" : country;
+  const positionHint = autoDetectPosition ? "Unknown — please determine from search results" : position;
+
   const searchPrompt = `You are a football player identity verification assistant. Today is ${today}.
 
 A user has suggested adding this player to a transfer tracker:
 - Name: ${playerName}
-- Birth Year: ${birthYear}
-- Country: ${country}
-- Position: ${position}
+- Birth Year: ~${birthYear} (approximate)
+- Country: ${countryHint}
+- Position: ${positionHint}
 - Current Club: ${currentClub}
 ${extraContext ? `- Additional context: ${extraContext}` : ""}
 
@@ -208,14 +210,16 @@ Your task:
 1. Search for this player to VERIFY their identity
 2. Run 3-5 web searches:
    - "${playerName}" ${currentClub} football
-   - "${playerName}" ${country} ${birthYear} football
+   - "${playerName}" ${birthYear} football youth
    - "${playerName}" transfer 2026
-   ${["Senegal","Mali","Guinea","Ivory Coast","Burkina Faso","Cameroon","Niger","Togo","Benin","Congo","Congo DR","Gabon","Chad","Comoros","Madagascar","Mauritania","Djibouti"].includes(country) ? `- French variant search for this player` : ""}
-3. Determine if this is a REAL youth football player matching ALL provided details
-4. Check for CONFUSION RISKS — older or more famous players with similar names
-5. Gather any available info: height, foot preference, contract, stats, transfer rumours
+   - Also try French variants if the club/name suggests a francophone player
+3. Determine if this is a REAL youth football player matching the provided details
+4. IMPORTANT: Determine the player's NATIONALITY and POSITION from search results if not provided
+5. Check for CONFUSION RISKS — older or more famous players with similar names
+6. Gather any available info: height, foot preference, contract, stats, transfer rumours
 
 Report your findings clearly. For each search, note what you found or didn't find.
+Include the player's COUNTRY and POSITION in your findings.
 Rate your confidence:
 - HIGH: Found in 2+ independent sources, all details match
 - MEDIUM: Found in 1 source, most details match
@@ -251,17 +255,22 @@ Rate your confidence:
 
 // ── Phase 2: Generate JSON data ───────────────────────────────────────
 async function phase2Generate(client, findings) {
+  const countryHint = autoDetectCountry ? "DETERMINE FROM SEARCH FINDINGS" : country;
+  const positionHint = autoDetectPosition ? "DETERMINE FROM SEARCH FINDINGS" : position;
+  const flagHint = autoDetectCountry ? "DETERMINE — use country flag emoji" : (COUNTRY_FLAGS[country] || "\u{1F30D}");
+
+  const countryFlagList = Object.entries(COUNTRY_FLAGS).map(([c, f]) => `${c}: ${f}`).join(", ");
+
   const jsonPrompt = `You are the JSON formatter for the Player Watchlist. Based on the verification findings below, produce the structured data for a new player.
 
 TODAY'S DATE: ${today}
 
 ## PLAYER SUGGESTION
 - Name: ${playerName}
-- Birth Year: ${birthYear}
-- Country: ${country}
-- Position: ${position}
+- Birth Year: ~${birthYear} (approximate)
+- Country: ${countryHint}
+- Position: ${positionHint}
 - Current Club: ${currentClub}
-- Flag emoji: ${COUNTRY_FLAGS[country] || "\u{1F30D}"}
 - Assigned ID: ${nextId}
 
 ## VERIFICATION FINDINGS
@@ -271,12 +280,16 @@ ${findings}
 1. confidence must be "high", "medium", or "low" based on the verification findings
 2. If confidence is "low", still produce the data but explain why in reasoning
 3. For the player object, use EXACTLY this schema — no extra fields
-4. altSpellings: include common alternate spellings found during search
-5. confusionRisk: if there's an older/more famous player with a similar name, describe them (format: "Name (b.YYYY, Club)")
-6. If transfer rumours were found during verification, include them in rumors[]
-7. Rumour status must be one of: rumour, advanced, confirmed, official
-8. Dates must use format: "Mon DD, YYYY" (e.g. "Feb 8, 2026")
-9. For intel fields, use "—" if not found
+4. IMPORTANT: Determine the correct COUNTRY and POSITION from the search findings
+5. Use the correct flag emoji for the country. Available flags: ${countryFlagList}
+6. Valid positions: GK, CB, LB, RB, DF, DM, CM, MF, AM, LW, RW, FW, ST
+7. altSpellings: include common alternate spellings found during search
+8. confusionRisk: if there's an older/more famous player with a similar name, describe them (format: "Name (b.YYYY, Club)")
+9. If transfer rumours were found during verification, include them in rumors[]
+10. Rumour status must be one of: rumour, advanced, confirmed, official
+11. Dates must use format: "Mon DD, YYYY" (e.g. "Feb 8, 2026")
+12. For intel fields, use "—" if not found
+13. birthYear should be the VERIFIED birth year from search, or the approximate one provided
 
 ## OUTPUT
 Return ONLY a valid JSON object (no markdown fences, no commentary):
@@ -286,10 +299,10 @@ Return ONLY a valid JSON object (no markdown fences, no commentary):
   "player": {
     "id": ${nextId},
     "name": "<verified full name>",
-    "country": "${country}",
-    "flag": "${COUNTRY_FLAGS[country] || "\u{1F30D}"}",
-    "position": "${position}",
-    "birthYear": ${birthYear},
+    "country": "<country determined from findings>",
+    "flag": "<country flag emoji>",
+    "position": "<position determined from findings>",
+    "birthYear": <verified or approximate birth year>,
     "currentClub": "<verified club name>",
     "status": "no_rumours",
     "sweepTier": "C",
@@ -329,7 +342,7 @@ async function main() {
   const client = new Anthropic();
 
   console.error(`\n=== ONBOARD: ${playerName} ===`);
-  console.error(`Country: ${country} | Position: ${position} | Born: ${birthYear}`);
+  console.error(`Country: ${autoDetectCountry ? "auto-detect" : country} | Position: ${autoDetectPosition ? "auto-detect" : position} | Born: ~${birthYear}`);
   console.error(`Club: ${currentClub}`);
   console.error(`Next ID: ${nextId}\n`);
 

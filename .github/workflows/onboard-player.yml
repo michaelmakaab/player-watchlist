@@ -75,11 +75,12 @@ jobs:
             if (!year || year < 2000 || year > 2015) {
               core.setFailed('Birth year must be between 2000 and 2015');
             }
-            if (!country) {
-              core.setFailed('Country is required');
+            // Country and position are optional — bot auto-detects if set to "_Auto-detect_"
+            if (country === '_Auto-detect_') {
+              core.setOutput('country', '');
             }
-            if (!position) {
-              core.setFailed('Position is required');
+            if (position === '_Auto-detect_') {
+              core.setOutput('position', '');
             }
             if (!currentClub) {
               core.setFailed('Current club is required');
