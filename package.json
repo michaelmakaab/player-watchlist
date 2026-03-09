@@ -1,0 +1,14 @@
+{
+  "name": "player-watchlist",
+  "version": "1.0.0",
+  "description": "Self-service player watchlist — AI-verified player tracking",
+  "type": "module",
+  "scripts": {
+    "build": "bash build.sh",
+    "sweep": "node scripts/sweep.mjs",
+    "onboard": "node scripts/onboard.mjs"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.39.0"
+  }
+}

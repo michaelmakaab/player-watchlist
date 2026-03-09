@@ -1,0 +1,7 @@
+node_modules/
+.env
+.DS_Store
+sweeps/last_raw_findings.txt
+sweeps/last_raw_response.txt
+sweeps/last_europe_findings.txt
+sweeps/last_europe_response.txt

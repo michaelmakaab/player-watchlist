@@ -1,0 +1,36 @@
+{
+  "aliases": {
+    "AC Milan": ["Milan", "Milan Futuro"],
+    "Liverpool FC": ["Liverpool"],
+    "FC Nordsjælland": ["FCN", "Nordsjaelland", "FC Nordsjelland"],
+    "Arsenal FC": ["Arsenal"],
+    "Chelsea FC": ["Chelsea"],
+    "Manchester United": ["Man United", "Man Utd"],
+    "Manchester City": ["Man City"],
+    "Barcelona": ["FC Barcelona", "Barça"],
+    "Real Madrid": ["Real Madrid CF"],
+    "Paris Saint-Germain": ["PSG"],
+    "Bayern Munich": ["Bayern München", "FC Bayern"],
+    "Borussia Dortmund": ["BVB", "Dortmund"],
+    "Juventus": ["Juve"],
+    "Inter Milan": ["Inter", "FC Internazionale"],
+    "AS Roma": ["Roma"],
+    "Olympique Lyonnais": ["Lyon", "OL"],
+    "Olympique de Marseille": ["Marseille", "OM"],
+    "AS Monaco": ["Monaco"],
+    "Sporting CP": ["Sporting Lisbon", "Sporting"],
+    "SL Benfica": ["Benfica"],
+    "FC Porto": ["Porto"],
+    "Ajax Amsterdam": ["Ajax"],
+    "Red Bull Salzburg": ["RB Salzburg", "Salzburg"],
+    "RB Leipzig": ["Leipzig"]
+  },
+  "academyPipelines": {
+    "Right to Dream": "FC Nordsjælland",
+    "Génération Foot": "multiple European clubs",
+    "Diambars FC": "multiple European clubs",
+    "Be Sport Academy": "multiple European clubs",
+    "WAFA SC": "multiple European clubs",
+    "Aspire Academy": "multiple European clubs"
+  }
+}

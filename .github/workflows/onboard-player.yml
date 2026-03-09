@@ -1,0 +1,264 @@
+name: Onboard Player
+
+on:
+  issues:
+    types: [opened]
+  issue_comment:
+    types: [created]
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+
+jobs:
+  onboard:
+    runs-on: ubuntu-latest
+    if: |
+      (github.event_name == 'issues' && contains(github.event.issue.labels.*.name, 'player-suggestion')) ||
+      (github.event_name == 'issue_comment' && contains(github.event.issue.labels.*.name, 'needs-confirmation') && github.event.comment.user.login == github.event.issue.user.login)
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Parse issue body
+        id: parse
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const body = context.payload.issue.body || '';
+
+            function parseField(body, fieldName) {
+              const regex = new RegExp(`### ${fieldName}\\s*\\n\\s*\\n([^\\n]+)`, 'i');
+              const match = body.match(regex);
+              return match ? match[1].trim() : '';
+            }
+
+            const playerName = parseField(body, 'Player Name');
+            const birthYear = parseField(body, 'Birth Year');
+            const country = parseField(body, 'Country');
+            const position = parseField(body, 'Position');
+            const currentClub = parseField(body, 'Current Club');
+
+            // Context might be multiline
+            const contextMatch = body.match(/### Additional Context \(optional\)\s*\n\s*\n([\s\S]*?)(?=###|$)/i);
+            const extraContext = contextMatch ? contextMatch[1].trim().replace(/_No response_/i, '') : '';
+
+            // Also include any follow-up comments for re-verification
+            let commentContext = '';
+            if (context.eventName === 'issue_comment') {
+              commentContext = context.payload.comment.body || '';
+            }
+
+            core.setOutput('player_name', playerName);
+            core.setOutput('birth_year', birthYear);
+            core.setOutput('country', country);
+            core.setOutput('position', position);
+            core.setOutput('current_club', currentClub);
+            core.setOutput('context', extraContext + (commentContext ? '\n\nFollow-up from user: ' + commentContext : ''));
+
+            // Basic validation
+            const year = parseInt(birthYear);
+            if (!playerName || playerName.length < 2) {
+              core.setFailed('Player name is required');
+            }
+            if (!year || year < 2000 || year > 2015) {
+              core.setFailed('Birth year must be between 2000 and 2015');
+            }
+            if (!country) {
+              core.setFailed('Country is required');
+            }
+            if (!position) {
+              core.setFailed('Position is required');
+            }
+            if (!currentClub) {
+              core.setFailed('Current club is required');
+            }
+
+      - name: Run onboard verification
+        id: onboard
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.TT }}
+        run: |
+          node scripts/onboard.mjs \
+            --name "${{ steps.parse.outputs.player_name }}" \
+            --year "${{ steps.parse.outputs.birth_year }}" \
+            --country "${{ steps.parse.outputs.country }}" \
+            --position "${{ steps.parse.outputs.position }}" \
+            --club "${{ steps.parse.outputs.current_club }}" \
+            --context "${{ steps.parse.outputs.context }}" \
+            > /tmp/onboard_result.json 2> /tmp/onboard_log.txt
+
+          echo "=== Onboard Log ==="
+          cat /tmp/onboard_log.txt
+          echo ""
+          echo "=== Onboard Result ==="
+          cat /tmp/onboard_result.json
+
+      - name: Process result
+        id: process
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const result = JSON.parse(fs.readFileSync('/tmp/onboard_result.json', 'utf-8'));
+
+            // Handle errors
+            if (result.error) {
+              if (result.error === 'duplicate') {
+                await github.rest.issues.createComment({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  issue_number: context.payload.issue.number,
+                  body: `## Already Tracked\n\nThis player appears to already be in the watchlist:\n**${result.existingPlayer}** (ID ${result.existingId})\n\nClosing this issue.`
+                });
+                await github.rest.issues.update({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  issue_number: context.payload.issue.number,
+                  state: 'closed'
+                });
+                return;
+              }
+              core.setFailed(`Onboard error: ${result.error} - ${result.message || ''}`);
+              return;
+            }
+
+            const confidence = result.confidence || 'low';
+            core.setOutput('confidence', confidence);
+
+            if (confidence === 'low') {
+              // Comment with findings and ask for more info
+              const body = `## Verification Result: Needs More Info\n\n` +
+                `I searched for **${result.player?.name || 'this player'}** but couldn't verify with enough confidence.\n\n` +
+                `**Reasoning:** ${result.reasoning || 'Insufficient information found'}\n\n` +
+                `**Can you help by providing:**\n` +
+                `- A link to an article, Transfermarkt page, or social media post about this player\n` +
+                `- Any tournament appearances (e.g., U17 World Cup, AFCON U20)\n` +
+                `- Other identifying details (jersey number, previous clubs)\n\n` +
+                `Reply to this issue with more info and I'll try again.`;
+
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.payload.issue.number,
+                body
+              });
+
+              // Add needs-confirmation label, remove player-suggestion
+              await github.rest.issues.addLabels({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.payload.issue.number,
+                labels: ['needs-confirmation']
+              });
+
+              return;
+            }
+
+            // HIGH or MEDIUM confidence — write the data
+            core.setOutput('should_add', 'true');
+            fs.writeFileSync('/tmp/onboard_result.json', JSON.stringify(result, null, 2));
+
+      - name: Add player to data files
+        if: steps.process.outputs.should_add == 'true'
+        run: |
+          # Read onboard result
+          RESULT=$(cat /tmp/onboard_result.json)
+
+          # Update players.json — add new player and increment playerCount
+          node -e "
+            const fs = require('fs');
+            const result = JSON.parse(fs.readFileSync('/tmp/onboard_result.json', 'utf-8'));
+
+            const playersData = JSON.parse(fs.readFileSync('data/players.json', 'utf-8'));
+            playersData.players.push(result.player);
+            playersData.meta.playerCount = playersData.players.length;
+            fs.writeFileSync('data/players.json', JSON.stringify(playersData, null, 2) + '\n');
+
+            const intelData = JSON.parse(fs.readFileSync('data/intel.json', 'utf-8'));
+            intelData[String(result.player.id)] = result.intel;
+            fs.writeFileSync('data/intel.json', JSON.stringify(intelData, null, 2) + '\n');
+
+            console.log('Added player: ' + result.player.name + ' (ID ' + result.player.id + ')');
+          "
+
+          # Build
+          bash build.sh
+
+      - name: Create PR and merge
+        if: steps.process.outputs.should_add == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          PLAYER_NAME=$(node -e "const r = JSON.parse(require('fs').readFileSync('/tmp/onboard_result.json','utf-8')); console.log(r.player.name)")
+          PLAYER_SLUG=$(echo "$PLAYER_NAME" | tr '[:upper:]' '[:lower:]' | tr ' ' '-' | tr -cd 'a-z0-9-')
+          BRANCH="onboard/${PLAYER_SLUG}-$(date +%s)"
+          ISSUE_NUM=${{ github.event.issue.number }}
+
+          git config user.name "Player Watchlist Bot"
+          git config user.email "bot@player-watchlist.github.io"
+
+          git checkout -b "$BRANCH"
+          git add data/players.json data/intel.json dist/index.html index.html
+          git commit -m "add: ${PLAYER_NAME} via player suggestion (#${ISSUE_NUM})"
+          git push origin "$BRANCH"
+
+          gh pr create \
+            --title "Add ${PLAYER_NAME} to watchlist" \
+            --body "Automatically verified and added via issue #${ISSUE_NUM}." \
+            --base main \
+            --head "$BRANCH"
+
+          sleep 10
+          gh pr merge --squash --delete-branch
+
+      - name: Comment success and close issue
+        if: steps.process.outputs.should_add == 'true'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const result = JSON.parse(fs.readFileSync('/tmp/onboard_result.json', 'utf-8'));
+            const p = result.player;
+            const confidence = result.confidence;
+
+            const body = `## Player Added Successfully! ${p.flag}\n\n` +
+              `**${p.name}** has been added to the watchlist.\n\n` +
+              `| Field | Value |\n|-------|-------|\n` +
+              `| ID | ${p.id} |\n` +
+              `| Country | ${p.country} ${p.flag} |\n` +
+              `| Position | ${p.position} |\n` +
+              `| Club | ${p.currentClub} |\n` +
+              `| Birth Year | ${p.birthYear} |\n` +
+              `| Status | ${p.status} |\n` +
+              `| Confidence | ${confidence} |\n\n` +
+              (p.confusionRisk ? `> ⚠️ **Note:** ${p.confusionRisk}\n\n` : '') +
+              `The tracker will update within a few minutes. ` +
+              `The sweep bot checks for transfer intel every Monday.\n\n` +
+              `[View the watchlist](https://michaelmakaab.github.io/player-watchlist/)`;
+
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.payload.issue.number,
+              body
+            });
+
+            await github.rest.issues.update({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.payload.issue.number,
+              state: 'closed',
+              labels: ['player-added']
+            });

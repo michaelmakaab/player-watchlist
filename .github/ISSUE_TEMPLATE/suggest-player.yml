@@ -1,0 +1,128 @@
+name: Suggest a Player
+description: Suggest a new player to track on the Player Watchlist
+title: "[Player Suggestion] "
+labels: ["player-suggestion"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Suggest a Player
+        Fill in the details below. The bot will verify the player's identity
+        using web search and add them to the watchlist automatically.
+
+  - type: input
+    id: player_name
+    attributes:
+      label: Player Name
+      description: Full name of the player
+      placeholder: e.g., Amadou Diallo
+    validations:
+      required: true
+
+  - type: input
+    id: birth_year
+    attributes:
+      label: Birth Year
+      description: Four-digit year
+      placeholder: e.g., 2008
+    validations:
+      required: true
+
+  - type: dropdown
+    id: country
+    attributes:
+      label: Country
+      options:
+        - Algeria
+        - Angola
+        - Benin
+        - Burkina Faso
+        - Burundi
+        - Cameroon
+        - Cape Verde
+        - Central African Republic
+        - Chad
+        - Comoros
+        - Congo
+        - Congo DR
+        - Djibouti
+        - Egypt
+        - Equatorial Guinea
+        - Eritrea
+        - Eswatini
+        - Ethiopia
+        - Gabon
+        - Gambia
+        - Ghana
+        - Guinea
+        - Guinea-Bissau
+        - Ivory Coast
+        - Kenya
+        - Lesotho
+        - Liberia
+        - Libya
+        - Madagascar
+        - Malawi
+        - Mali
+        - Mauritania
+        - Mauritius
+        - Morocco
+        - Mozambique
+        - Namibia
+        - Niger
+        - Nigeria
+        - Rwanda
+        - Senegal
+        - Sierra Leone
+        - Somalia
+        - South Africa
+        - South Sudan
+        - Sudan
+        - Tanzania
+        - Togo
+        - Tunisia
+        - Uganda
+        - Zambia
+        - Zimbabwe
+        - Other
+    validations:
+      required: true
+
+  - type: dropdown
+    id: position
+    attributes:
+      label: Position
+      options:
+        - GK
+        - CB
+        - LB
+        - RB
+        - DF
+        - DM
+        - CM
+        - MF
+        - AM
+        - LW
+        - RW
+        - FW
+        - ST
+    validations:
+      required: true
+
+  - type: input
+    id: current_club
+    attributes:
+      label: Current Club
+      description: The club or academy the player currently plays for
+      placeholder: e.g., Diambars FC
+    validations:
+      required: true
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Additional Context (optional)
+      description: Any links, transfer rumours, or background info you know about
+      placeholder: e.g., "Trialled at Man United in September 2025"
+    validations:
+      required: false
