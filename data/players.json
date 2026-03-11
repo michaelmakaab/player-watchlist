@@ -2,7 +2,7 @@
   "meta": {
     "lastSweep": "—",
     "sweepNumber": 0,
-    "playerCount": 2
+    "playerCount": 1
   },
   "players": [
     {
@@ -19,22 +19,6 @@
         "Shandre Campbell"
       ],
       "confusionRisk": null,
-      "rumors": []
-    },
-    {
-      "id": 2,
-      "name": "Abdoulaye Faye",
-      "country": "Senegal",
-      "flag": "🌍",
-      "position": "CB",
-      "birthYear": 2004,
-      "currentClub": "Bayer Leverkusen",
-      "status": "no_rumours",
-      "sweepTier": "C",
-      "altSpellings": [
-        "Abdoulaye Faye (footballer, born 2004)"
-      ],
-      "confusionRisk": "Abdoulaye Diagne-Faye (b. 1978, retired) — former defender for Bolton, Newcastle, Stoke City, West Ham",
       "rumors": []
     }
   ]
