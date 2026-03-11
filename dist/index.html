@@ -180,6 +180,70 @@ body {
   cursor: pointer; transition: all 0.15s; margin: 10px 16px;
 }
 .remove-player-btn:hover { background: #450A0A; border-color: #F87171; }
+/* ── Pending Players ── */
+.pending-section { max-width: 1200px; margin: 0 auto; padding: 0 32px; }
+.pending-header {
+  display: flex; align-items: center; padding: 14px 0;
+  cursor: pointer; user-select: none;
+}
+.pending-header:hover .pending-title { color: #FBBF24; }
+.pending-title {
+  font-size: 13px; font-weight: 700; color: #F59E0B;
+  letter-spacing: 1px; display: flex; align-items: center; gap: 8px;
+}
+.pending-count {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-width: 20px; height: 20px; border-radius: 999px;
+  background: #F59E0B; color: #0B1120; font-size: 11px; font-weight: 700; padding: 0 6px;
+}
+.pending-card {
+  background: #0B1120; border: 1px solid rgba(245,158,11,0.25);
+  border-radius: 12px; overflow: hidden; margin-bottom: 10px;
+}
+.pending-card-header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 14px 20px; gap: 12px;
+}
+.pending-card-left { display: flex; align-items: center; gap: 14px; }
+.pending-status-pill {
+  display: inline-block; padding: 3px 12px; border-radius: 999px;
+  font-size: 11px; font-weight: 700; letter-spacing: 0.3px;
+  color: #F59E0B; background: #422006; border: 1px solid rgba(245,158,11,0.25);
+}
+.pending-reasoning {
+  padding: 12px 20px; border-top: 1px solid rgba(245,158,11,0.15);
+  font-size: 13px; color: #94A3B8; line-height: 1.6;
+}
+.pending-reasoning-label {
+  font-size: 10px; font-weight: 700; color: #F59E0B;
+  letter-spacing: 1px; margin-bottom: 6px;
+}
+.pending-action-bar {
+  padding: 12px 20px; border-top: 1px solid rgba(245,158,11,0.15);
+  display: flex; align-items: flex-start; gap: 10px;
+}
+.pending-info-input {
+  flex: 1; padding: 10px 14px; background: #0B1120;
+  border: 1px solid #1E293B; border-radius: 8px; color: #E2E8F0;
+  font-size: 13px; font-family: 'DM Sans', sans-serif; outline: none;
+  resize: vertical; min-height: 60px;
+}
+.pending-info-input:focus { border-color: #F59E0B; }
+.pending-info-input::placeholder { color: #334155; }
+.pending-submit-btn {
+  padding: 10px 18px; border-radius: 8px; border: none;
+  background: #F59E0B; color: #0B1120; font-size: 12px; font-weight: 700;
+  font-family: 'Space Mono', monospace; cursor: pointer; transition: all 0.15s; white-space: nowrap;
+}
+.pending-submit-btn:hover { background: #FBBF24; }
+.pending-submit-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+.pending-meta { font-size: 10px; color: #475569; padding: 0 20px 12px; }
+@media (max-width: 640px) {
+  .pending-section { padding: 0 16px; }
+  .pending-action-bar { flex-direction: column; }
+  .pending-submit-btn { width: 100%; }
+  .pending-card-header { flex-wrap: wrap; gap: 8px; }
+}
 .intel-toggle {
   padding: 8px 16px; background: #0A0F1A; border-bottom: 1px solid #1E293B;
   cursor: pointer; display: flex; align-items: center; gap: 8px; user-select: none;
@@ -346,6 +410,10 @@ body {
           <div class="mono stat-value" style="color:#64748B" id="stat-total">0</div>
           <div class="mono stat-label">Rumours</div>
         </div>
+        <div class="stat" id="statPendingWrap" style="display:none">
+          <div class="mono stat-value" style="color:#F59E0B" id="stat-pending">0</div>
+          <div class="mono stat-label">Pending</div>
+        </div>
         <button class="add-player-btn mono" onclick="openAddPlayerModal()">+ ADD PLAYER</button>
       </div>
     </div>
@@ -373,6 +441,17 @@ body {
   <div class="tier-legend-item"><span class="tier-dot" style="background:#FBBF24" aria-hidden="true"></span><span class="tier-legend-text">Tier 2 &mdash; Reliable Sources</span></div>
   <div class="tier-legend-item"><span class="tier-dot" style="background:#FB923C" aria-hidden="true"></span><span class="tier-legend-text">Tier 3 &mdash; Developing</span></div>
   <div class="tier-legend-item"><span class="tier-dot" style="background:#F87171" aria-hidden="true"></span><span class="tier-legend-text">Tier 4 &mdash; Speculative</span></div>
+</div>
+<!-- ── Pending Players ── -->
+<div class="pending-section" id="pendingSection" style="display:none">
+  <div class="pending-header mono" onclick="togglePendingSection()">
+    <span class="pending-title">
+      <span class="chevron" id="pendingChevron">&#9662;</span>
+      NEEDS YOUR INFO
+      <span class="pending-count" id="pendingCount">0</span>
+    </span>
+  </div>
+  <div id="pendingContainer"></div>
 </div>
 <div class="player-list">
   <div class="view-tabs" role="tablist" aria-label="View mode">
@@ -403,10 +482,12 @@ const PLAYERS_DATA = {
   "players": []
 };
 const INTEL_DATA = {};
+const PENDING_DATA = [];
 
 // ── DERIVED DATA ─────────────────────────────────────────────────────
 const PLAYERS = PLAYERS_DATA.players;
 const INTEL = INTEL_DATA;
+const PENDING = PENDING_DATA;
 const META = PLAYERS_DATA.meta;
 
 // Populate sweep info header with freshness indicator
@@ -698,9 +779,67 @@ document.querySelectorAll(".sort-btn").forEach(btn => {
   });
 });
 
+// ── PENDING PLAYERS ─────────────────────────────────────────────────
+let pendingExpanded = true;
+
+function togglePendingSection() {
+  pendingExpanded = !pendingExpanded;
+  document.getElementById("pendingChevron").classList.toggle("open", pendingExpanded);
+  document.getElementById("pendingContainer").style.display = pendingExpanded ? "" : "none";
+}
+
+function renderPending() {
+  const section = document.getElementById("pendingSection");
+  const container = document.getElementById("pendingContainer");
+  const pendingWrap = document.getElementById("statPendingWrap");
+  const pendingStat = document.getElementById("stat-pending");
+
+  if (!PENDING || PENDING.length === 0) {
+    section.style.display = "none";
+    pendingWrap.style.display = "none";
+    return;
+  }
+  section.style.display = "";
+  pendingWrap.style.display = "";
+  pendingStat.textContent = PENDING.length;
+  document.getElementById("pendingCount").textContent = PENDING.length;
+
+  var html = "";
+  PENDING.forEach(function(p, idx) {
+    html += '<div class="pending-card" data-issue="' + p.issueNumber + '">' +
+      '<div class="pending-card-header">' +
+        '<div class="pending-card-left">' +
+          '<span class="player-flag">' + (p.flag || '\ud83c\udf0d') + '</span>' +
+          '<div>' +
+            '<div class="player-name">' + escapeHTML(p.name) + '</div>' +
+            '<div class="mono player-meta">' +
+              (p.position ? escapeHTML(p.position) + ' \u00b7 ' : '') +
+              p.birthYear + ' \u00b7 ' + escapeHTML(p.currentClub) +
+            '</div>' +
+          '</div>' +
+        '</div>' +
+        '<span class="mono pending-status-pill">NEEDS INFO</span>' +
+      '</div>' +
+      '<div class="pending-reasoning">' +
+        '<div class="mono pending-reasoning-label">WHY MORE INFO IS NEEDED</div>' +
+        escapeHTML(p.reasoning) +
+      '</div>' +
+      '<div class="pending-action-bar">' +
+        '<textarea class="pending-info-input" id="pendingInput' + idx + '" placeholder="Provide a link, tournament name, jersey number, or any details that help identify this player..."></textarea>' +
+        '<button class="pending-submit-btn mono" id="pendingBtn' + idx + '" onclick="submitPendingInfo(' + idx + ')">SEND INFO</button>' +
+      '</div>' +
+      '<div class="pending-meta mono">Submitted ' + escapeHTML(p.submittedAt) +
+        (p.attempts > 1 ? ' \u00b7 Checked ' + p.attempts + ' times \u00b7 Last: ' + escapeHTML(p.lastChecked) : '') +
+      '</div>' +
+    '</div>';
+  });
+  container.innerHTML = html;
+}
+
 // ── INIT ─────────────────────────────────────────────────────────────
 applyPillStyles();
 render();
+renderPending();
 </script>
 
 <!-- ── Add Player Modal ── -->
@@ -834,6 +973,54 @@ function showFormError(msg) {
   const el = document.getElementById("formError");
   el.textContent = msg;
   el.classList.remove("hidden");
+}
+
+// ── PROVIDE INFO FOR PENDING PLAYER ─────────────────────────────────
+async function submitPendingInfo(idx) {
+  var p = PENDING[idx];
+  var input = document.getElementById("pendingInput" + idx);
+  var btn = document.getElementById("pendingBtn" + idx);
+  var info = input.value.trim();
+
+  if (!info || info.length < 5) {
+    input.style.borderColor = "#F87171";
+    input.setAttribute("placeholder", "Please provide at least a few words of info...");
+    return;
+  }
+
+  btn.disabled = true;
+  btn.textContent = "SENDING...";
+
+  try {
+    var resp = await fetch(
+      "https://api.github.com/repos/" + REPO_OWNER + "/" + REPO_NAME + "/issues/" + p.issueNumber + "/comments",
+      {
+        method: "POST",
+        headers: {
+          "Authorization": "Bearer " + GITHUB_TOKEN,
+          "Accept": "application/vnd.github+json",
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ body: info })
+      }
+    );
+
+    if (!resp.ok) {
+      var data = await resp.json().catch(function() { return {}; });
+      throw new Error(data.message || "GitHub API error (" + resp.status + ")");
+    }
+
+    btn.textContent = "\u2713 SENT — Bot will re-check shortly";
+    btn.style.background = "#34D399";
+    btn.style.color = "#052E16";
+    input.value = "";
+    input.disabled = true;
+    input.setAttribute("placeholder", "Info sent! The bot will re-verify this player.");
+  } catch (err) {
+    btn.disabled = false;
+    btn.textContent = "SEND INFO";
+    alert("Failed to send: " + err.message);
+  }
 }
 
 // ── REMOVE PLAYER ────────────────────────────────────────────────────

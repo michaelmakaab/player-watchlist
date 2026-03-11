@@ -101,8 +101,8 @@ if (!playerName || playerName.length < 2 || playerName.length > 80) {
   console.error(JSON.stringify({ error: "Invalid player name (must be 2-80 chars)" }));
   process.exit(1);
 }
-if (!birthYear || birthYear < 2000 || birthYear > 2015) {
-  console.error(JSON.stringify({ error: "Invalid birth year (must be 2000-2015)" }));
+if (!birthYear || birthYear < 1900 || birthYear > new Date().getFullYear()) {
+  console.error(JSON.stringify({ error: "Invalid birth year" }));
   process.exit(1);
 }
 // Country and position are optional — bot auto-detects during verification
@@ -124,8 +124,13 @@ if (!process.env.ANTHROPIC_API_KEY) {
 // ── Load existing data ────────────────────────────────────────────────
 const PLAYERS_PATH = path.join(ROOT, "data", "players.json");
 const INTEL_PATH = path.join(ROOT, "data", "intel.json");
+const PENDING_PATH = path.join(ROOT, "data", "pending.json");
 const playersData = JSON.parse(fs.readFileSync(PLAYERS_PATH, "utf-8"));
 const intelData = JSON.parse(fs.readFileSync(INTEL_PATH, "utf-8"));
+let pendingData = [];
+if (fs.existsSync(PENDING_PATH)) {
+  pendingData = JSON.parse(fs.readFileSync(PENDING_PATH, "utf-8"));
+}
 
 // ── Duplicate check ───────────────────────────────────────────────────
 function normalizeName(s) {
@@ -158,6 +163,18 @@ if (dupe) {
     message: `"${playerName}" appears to match existing player: ${dupe.name} (ID ${dupe.id}, ${dupe.country}, ${dupe.birthYear})`,
     existingPlayer: dupe.name,
     existingId: dupe.id
+  }));
+  process.exit(0);
+}
+
+// Check pending players too
+const pendingDupe = pendingData.find(p => normalizeName(p.name) === normalizeName(playerName));
+if (pendingDupe) {
+  console.log(JSON.stringify({
+    error: "duplicate",
+    message: `"${playerName}" is already pending verification (issue #${pendingDupe.issueNumber}). Please provide additional info on that issue.`,
+    existingPlayer: pendingDupe.name,
+    existingId: "pending-" + pendingDupe.issueNumber
   }));
   process.exit(0);
 }
@@ -208,18 +225,22 @@ ${extraContext ? `- Additional context: ${extraContext}` : ""}
 
 Your task:
 1. Search for this player to VERIFY their identity
-2. Run 3-5 web searches:
+2. Run 5-8 web searches:
    - "${playerName}" ${currentClub} football
    - "${playerName}" ${birthYear} football youth
    - "${playerName}" transfer 2026
+   - "${playerName}" transfer rumour linked
+   - "${playerName}" transfer news latest
    - Also try French variants if the club/name suggests a francophone player
-3. Determine if this is a REAL youth football player matching the provided details
+3. Determine if this is a REAL football player matching the provided details
 4. IMPORTANT: Determine the player's NATIONALITY and POSITION from search results if not provided
 5. Check for CONFUSION RISKS — older or more famous players with similar names
-6. Gather any available info: height, foot preference, contract, stats, transfer rumours
+6. Gather any available info: height, foot preference, contract, stats
+7. CRITICAL: Search for ALL transfer rumours, links, and speculation from the LAST 3 MONTHS. For each rumour found, note the date, clubs involved, what was reported, and the source/journalist.
 
 Report your findings clearly. For each search, note what you found or didn't find.
 Include the player's COUNTRY and POSITION in your findings.
+Include ALL transfer rumours found in your report — these will be added to the tracker.
 Rate your confidence:
 - HIGH: Found in 2+ independent sources, all details match
 - MEDIUM: Found in 1 source, most details match
@@ -285,9 +306,10 @@ ${findings}
 6. Valid positions: GK, CB, LB, RB, DF, DM, CM, MF, AM, LW, RW, FW, ST
 7. altSpellings: include common alternate spellings found during search
 8. confusionRisk: if there's an older/more famous player with a similar name, describe them (format: "Name (b.YYYY, Club)")
-9. If transfer rumours were found during verification, include them in rumors[]
+9. CRITICAL: Include ALL transfer rumours found during verification in the rumors[] array. Search findings from the last 3 months should all be included. Each rumour needs: date, club, detail, source, sourceUrl (if available), tier (1-4), status, and recent (true for last 4 weeks, false otherwise).
 10. Rumour status must be one of: rumour, advanced, confirmed, official
 11. Dates must use format: "Mon DD, YYYY" (e.g. "Feb 8, 2026")
+12. If rumours were found, set status to "active" instead of "no_rumours"
 12. For intel fields, use "—" if not found
 13. birthYear should be the VERIFIED birth year from search, or the approximate one provided
 
@@ -304,11 +326,22 @@ Return ONLY a valid JSON object (no markdown fences, no commentary):
     "position": "<position determined from findings>",
     "birthYear": <verified or approximate birth year>,
     "currentClub": "<verified club name>",
-    "status": "no_rumours",
+    "status": "no_rumours or active (if rumours found)",
     "sweepTier": "C",
     "altSpellings": [],
     "confusionRisk": null,
-    "rumors": []
+    "rumors": [
+      {
+        "date": "Mon DD, YYYY",
+        "club": "Interested club name",
+        "detail": "What was reported",
+        "source": "Journalist or outlet name",
+        "sourceUrl": "https://... or null",
+        "tier": 3,
+        "status": "rumour|advanced|confirmed|official",
+        "recent": true
+      }
+    ]
   },
   "intel": {
     "height": "<or —>",
@@ -373,7 +406,11 @@ async function main() {
 
   // Ensure correct ID and flag
   result.player.id = nextId;
-  result.player.flag = COUNTRY_FLAGS[country] || "\u{1F30D}";
+  if (!autoDetectCountry) {
+    result.player.flag = COUNTRY_FLAGS[country] || "\u{1F30D}";
+  } else if (result.player.country && COUNTRY_FLAGS[result.player.country]) {
+    result.player.flag = COUNTRY_FLAGS[result.player.country];
+  }
 
   // Output result to stdout (workflow reads this)
   console.log(JSON.stringify(result, null, 2));

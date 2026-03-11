@@ -147,7 +147,7 @@ jobs:
                 `- A link to an article, Transfermarkt page, or social media post about this player\n` +
                 `- Any tournament appearances (e.g., U17 World Cup, AFCON U20)\n` +
                 `- Other identifying details (jersey number, previous clubs)\n\n` +
-                `Reply to this issue with more info and I'll try again.`;
+                `You can also provide info directly on the [Player Watchlist site](https://michaelmakaab.github.io/player-watchlist/).`;
 
               await github.rest.issues.createComment({
                 owner: context.repo.owner,
@@ -156,7 +156,7 @@ jobs:
                 body
               });
 
-              // Add needs-confirmation label, remove player-suggestion
+              // Add needs-confirmation label
               await github.rest.issues.addLabels({
                 owner: context.repo.owner,
                 repo: context.repo.repo,
@@ -164,6 +164,23 @@ jobs:
                 labels: ['needs-confirmation']
               });
 
+              // Write pending entry for the build step
+              const pendingEntry = {
+                name: result.player?.name || '${{ steps.parse.outputs.player_name }}',
+                birthYear: result.player?.birthYear || parseInt('${{ steps.parse.outputs.birth_year }}'),
+                country: result.player?.country || '',
+                flag: result.player?.flag || '\ud83c\udf0d',
+                position: result.player?.position || '',
+                currentClub: result.player?.currentClub || '${{ steps.parse.outputs.current_club }}',
+                reasoning: result.reasoning || 'Insufficient information found',
+                issueNumber: context.payload.issue.number,
+                submittedAt: new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }),
+                lastChecked: new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }),
+                attempts: 1
+              };
+
+              fs.writeFileSync('/tmp/pending_entry.json', JSON.stringify(pendingEntry, null, 2));
+              core.setOutput('should_pend', 'true');
               return;
             }
 
@@ -171,17 +188,87 @@ jobs:
             core.setOutput('should_add', 'true');
             fs.writeFileSync('/tmp/onboard_result.json', JSON.stringify(result, null, 2));
 
+      - name: Add to pending data
+        if: steps.process.outputs.should_pend == 'true'
+        run: |
+          node -e "
+            const fs = require('fs');
+            const entry = JSON.parse(fs.readFileSync('/tmp/pending_entry.json', 'utf-8'));
+            const pendingPath = 'data/pending.json';
+
+            let pending = [];
+            if (fs.existsSync(pendingPath)) {
+              pending = JSON.parse(fs.readFileSync(pendingPath, 'utf-8'));
+            }
+
+            const issueNum = entry.issueNumber;
+            const existingIdx = pending.findIndex(p => p.issueNumber === issueNum);
+
+            if (existingIdx >= 0) {
+              pending[existingIdx].reasoning = entry.reasoning;
+              pending[existingIdx].lastChecked = entry.lastChecked;
+              pending[existingIdx].attempts = (pending[existingIdx].attempts || 1) + 1;
+              console.log('Updated pending entry for issue #' + issueNum + ' (attempt ' + pending[existingIdx].attempts + ')');
+            } else {
+              pending.push(entry);
+              console.log('Added new pending entry: ' + entry.name + ' (issue #' + issueNum + ')');
+            }
+
+            fs.writeFileSync(pendingPath, JSON.stringify(pending, null, 2) + '\n');
+          "
+
+          bash build.sh
+
+      - name: Commit and push pending changes
+        if: steps.process.outputs.should_pend == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          PLAYER_NAME=$(node -e "const e = JSON.parse(require('fs').readFileSync('/tmp/pending_entry.json','utf-8')); console.log(e.name)")
+          PLAYER_SLUG=$(echo "$PLAYER_NAME" | tr '[:upper:]' '[:lower:]' | tr ' ' '-' | tr -cd 'a-z0-9-')
+          BRANCH="pending/${PLAYER_SLUG}-$(date +%s)"
+          ISSUE_NUM=$(node -e "const e = JSON.parse(require('fs').readFileSync('/tmp/pending_entry.json','utf-8')); console.log(e.issueNumber)")
+
+          git config user.name "Player Watchlist Bot"
+          git config user.email "bot@player-watchlist.github.io"
+
+          git checkout -b "$BRANCH"
+          git add data/pending.json dist/index.html index.html
+          git commit -m "pending: ${PLAYER_NAME} needs more info (#${ISSUE_NUM})"
+          git push origin "$BRANCH"
+
+          gh pr create \
+            --title "Pending: ${PLAYER_NAME} needs verification info" \
+            --body "Low confidence verification for issue #${ISSUE_NUM}. Player added to pending section on site." \
+            --base main \
+            --head "$BRANCH"
+
+          sleep 10
+          gh pr merge --squash --delete-branch
+
       - name: Add player to data files
         if: steps.process.outputs.should_add == 'true'
+        env:
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
         run: |
-          # Read onboard result
-          RESULT=$(cat /tmp/onboard_result.json)
-
-          # Update players.json — add new player and increment playerCount
           node -e "
             const fs = require('fs');
             const result = JSON.parse(fs.readFileSync('/tmp/onboard_result.json', 'utf-8'));
 
+            // Remove from pending.json if this was a re-verification
+            const pendingPath = 'data/pending.json';
+            if (fs.existsSync(pendingPath)) {
+              let pending = JSON.parse(fs.readFileSync(pendingPath, 'utf-8'));
+              const issueNum = parseInt(process.env.ISSUE_NUMBER);
+              const before = pending.length;
+              pending = pending.filter(p => p.issueNumber !== issueNum);
+              if (pending.length < before) {
+                console.log('Removed from pending: issue #' + issueNum);
+              }
+              fs.writeFileSync(pendingPath, JSON.stringify(pending, null, 2) + '\n');
+            }
+
+            // Add to players.json
             const playersData = JSON.parse(fs.readFileSync('data/players.json', 'utf-8'));
             playersData.players.push(result.player);
             playersData.meta.playerCount = playersData.players.length;
@@ -211,7 +298,7 @@ jobs:
           git config user.email "bot@player-watchlist.github.io"
 
           git checkout -b "$BRANCH"
-          git add data/players.json data/intel.json dist/index.html index.html
+          git add data/players.json data/intel.json data/pending.json dist/index.html index.html
           git commit -m "add: ${PLAYER_NAME} via player suggestion (#${ISSUE_NUM})"
           git push origin "$BRANCH"
 
@@ -233,6 +320,7 @@ jobs:
             const result = JSON.parse(fs.readFileSync('/tmp/onboard_result.json', 'utf-8'));
             const p = result.player;
             const confidence = result.confidence;
+            const rumourCount = (p.rumors || []).length;
 
             const body = `## Player Added Successfully! ${p.flag}\n\n` +
               `**${p.name}** has been added to the watchlist.\n\n` +
@@ -243,6 +331,7 @@ jobs:
               `| Club | ${p.currentClub} |\n` +
               `| Birth Year | ${p.birthYear} |\n` +
               `| Status | ${p.status} |\n` +
+              `| Rumours Found | ${rumourCount} |\n` +
               `| Confidence | ${confidence} |\n\n` +
               (p.confusionRisk ? `> ⚠️ **Note:** ${p.confusionRisk}\n\n` : '') +
               `The tracker will update within a few minutes. ` +

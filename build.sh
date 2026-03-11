@@ -21,6 +21,7 @@ mkdir -p "$DIST_DIR"
 
 PLAYERS_JSON=$(cat "$DATA_DIR/players.json")
 INTEL_JSON=$(cat "$DATA_DIR/intel.json")
+PENDING_JSON=$(cat "$DATA_DIR/pending.json" 2>/dev/null || echo "[]")
 
 echo "Building watchlist..."
 
@@ -30,6 +31,8 @@ echo "Building watchlist..."
       echo "const PLAYERS_DATA = $PLAYERS_JSON;"
     elif [[ "$line" == *"/*__INTEL_DATA__*/"* ]]; then
       echo "const INTEL_DATA = $INTEL_JSON;"
+    elif [[ "$line" == *"/*__PENDING_DATA__*/"* ]]; then
+      echo "const PENDING_DATA = $PENDING_JSON;"
     else
       echo "$line"
     fi
