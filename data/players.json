@@ -2,7 +2,56 @@
   "meta": {
     "lastSweep": "—",
     "sweepNumber": 0,
-    "playerCount": 0
+    "playerCount": 1
   },
-  "players": []
+  "players": [
+    {
+      "id": 1,
+      "name": "Mfundo Obrigado Vilakazi",
+      "country": "South Africa",
+      "flag": "🇿🇦",
+      "position": "AM",
+      "birthYear": 2005,
+      "currentClub": "Kaizer Chiefs",
+      "status": "active",
+      "sweepTier": "C",
+      "altSpellings": [
+        "Mfundo Vilikazi",
+        "Vilakazi"
+      ],
+      "confusionRisk": null,
+      "rumors": [
+        {
+          "date": "Nov 13, 2025",
+          "club": "Multiple European clubs",
+          "detail": "Agent Mike Makaab confirmed interest from several European clubs following Under-20 World Cup performances. Agent stated: 'There will always be interest in young, talented players like Mfundo Vilakazi... particularly when they continue to perform well for a football club like Kaizer Chiefs'",
+          "source": "Goal.com South Africa, KickOff",
+          "sourceUrl": null,
+          "tier": 3,
+          "status": "rumour",
+          "recent": false
+        },
+        {
+          "date": "Oct 22, 2025",
+          "club": "European clubs (unspecified)",
+          "detail": "Agent Mike Makaab believes Vilakazi's Under-20 World Cup performances could pave the way for a European move",
+          "source": "Soccer Laduma",
+          "sourceUrl": null,
+          "tier": 3,
+          "status": "rumour",
+          "recent": false
+        },
+        {
+          "date": "Sep 16, 2025",
+          "club": "Kaizer Chiefs (potential departure)",
+          "detail": "Kaizer Chiefs were looking to trim down their big squad to make it more manageable. Vilakazi not specifically named for exit but mentioned in context of squad restructuring",
+          "source": "Goal.com South Africa",
+          "sourceUrl": null,
+          "tier": 4,
+          "status": "rumour",
+          "recent": false
+        }
+      ]
+    }
+  ]
 }
