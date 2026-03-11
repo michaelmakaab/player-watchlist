@@ -2,25 +2,9 @@
   "meta": {
     "lastSweep": "—",
     "sweepNumber": 0,
-    "playerCount": 2
+    "playerCount": 1
   },
   "players": [
-    {
-      "id": 1,
-      "name": "Shandre Miguel Campbell",
-      "country": "South Africa",
-      "flag": "🌍",
-      "position": "LW",
-      "birthYear": 2005,
-      "currentClub": "Club Brugge",
-      "status": "no_rumours",
-      "sweepTier": "C",
-      "altSpellings": [
-        "Shandre Campbell"
-      ],
-      "confusionRisk": null,
-      "rumors": []
-    },
     {
       "id": 2,
       "name": "Abdoulaye Faye",
