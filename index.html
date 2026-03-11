@@ -173,6 +173,13 @@ body {
 .rumor-tier { text-align: right; }
 .no-rumors { padding: 20px 16px; text-align: center; color: #334155; font-size: 13px; }
 .no-results { text-align: center; padding: 60px; color: #334155; font-size: 14px; }
+.remove-player-btn {
+  display: inline-flex; align-items: center; gap: 5px; padding: 7px 14px;
+  border-radius: 6px; border: 1px solid #450A0A; background: transparent;
+  color: #F87171; font-size: 11px; font-weight: 700; font-family: 'Space Mono', monospace;
+  cursor: pointer; transition: all 0.15s; margin: 10px 16px;
+}
+.remove-player-btn:hover { background: #450A0A; border-color: #F87171; }
 .intel-toggle {
   padding: 8px 16px; background: #0A0F1A; border-bottom: 1px solid #1E293B;
   cursor: pointer; display: flex; align-items: center; gap: 8px; user-select: none;
@@ -575,6 +582,7 @@ function playerCardHTML(p) {
     } else if (archiveRumors.length === 0) {
       body += '<div class="no-rumors">No transfer rumours found yet \u2014 the sweep bot will check weekly</div>';
     }
+    body += '<button class="remove-player-btn mono" onclick="removePlayer(' + p.id + ', \'' + escapeHTML(p.name).replace(/'/g, "\\'") + '\', event)">\u2715 REMOVE PLAYER</button>';
     body += '</div>';
   }
   return '<div class="player-card" data-player-id="' + p.id + '" style="border-color:' + (isExpanded ? '#1E293B' : 'rgba(30,41,59,0.5)') + '" role="listitem">' +
@@ -827,6 +835,45 @@ function showFormError(msg) {
   const el = document.getElementById("formError");
   el.textContent = msg;
   el.classList.remove("hidden");
+}
+
+// ── REMOVE PLAYER ────────────────────────────────────────────────────
+async function removePlayer(id, name, e) {
+  e.stopPropagation();
+  if (!confirm("Remove " + name + " from the watchlist?")) return;
+
+  const btn = e.target;
+  btn.disabled = true;
+  btn.textContent = "REMOVING...";
+
+  try {
+    const resp = await fetch("https://api.github.com/repos/" + REPO_OWNER + "/" + REPO_NAME + "/issues", {
+      method: "POST",
+      headers: {
+        "Authorization": "Bearer " + GITHUB_TOKEN,
+        "Accept": "application/vnd.github+json",
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        title: "[Remove Player] " + name,
+        body: "### Player ID\n\n" + id + "\n\n### Player Name\n\n" + name,
+        labels: ["player-removal"]
+      })
+    });
+
+    if (!resp.ok) {
+      const data = await resp.json().catch(() => ({}));
+      throw new Error(data.message || "GitHub API error (" + resp.status + ")");
+    }
+
+    btn.textContent = "\u2713 REMOVAL REQUESTED";
+    btn.style.color = "#34D399";
+    btn.style.borderColor = "#052E16";
+  } catch (err) {
+    alert("Failed to submit removal: " + err.message);
+    btn.disabled = false;
+    btn.textContent = "\u2715 REMOVE PLAYER";
+  }
 }
 
 // Close modal on Escape
