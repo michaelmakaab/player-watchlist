@@ -2,7 +2,7 @@
   "meta": {
     "lastSweep": "—",
     "sweepNumber": 0,
-    "playerCount": 1
+    "playerCount": 2
   },
   "players": [
     {
@@ -50,6 +50,41 @@
           "tier": 4,
           "status": "rumour",
           "recent": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Hubert Gyau",
+      "country": "Ghana",
+      "flag": "🇬🇭",
+      "position": "CM",
+      "birthYear": 2005,
+      "currentClub": "Asante Kotoko SC",
+      "status": "active",
+      "sweepTier": "C",
+      "altSpellings": [],
+      "confusionRisk": null,
+      "rumors": [
+        {
+          "date": "Jan 26, 2026",
+          "club": "Kaizer Chiefs",
+          "detail": "South African powerhouse Kaizer Chiefs identified Asante Kotoko midfielder Hubert Gyau as a transfer target after eye-catching performances. Sources indicated formal bid expected in coming days.",
+          "source": "Kickgh.com / SportsWorldGhana",
+          "sourceUrl": null,
+          "tier": 3,
+          "status": "rumour",
+          "recent": false
+        },
+        {
+          "date": "Feb 20, 2026",
+          "club": "FC Midtjylland, Randers FC, Azam FC",
+          "detail": "Danish outfits FC Midtjylland and Randers FC, along with Tanzanian side Azam FC, keeping tabs on highly rated Ghanaian midfielder. Agent downplayed suggestions of formal negotiations.",
+          "source": "Soccer Laduma / Briefly.co.za",
+          "sourceUrl": null,
+          "tier": 3,
+          "status": "rumour",
+          "recent": true
         }
       ]
     }
