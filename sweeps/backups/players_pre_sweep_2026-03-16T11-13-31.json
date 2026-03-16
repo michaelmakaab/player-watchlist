@@ -1,7 +1,7 @@
 {
   "meta": {
-    "lastSweep": "Mar 16, 2026",
-    "sweepNumber": 1,
+    "lastSweep": "—",
+    "sweepNumber": 0,
     "playerCount": 2
   },
   "players": [
@@ -66,16 +66,6 @@
       "altSpellings": [],
       "confusionRisk": null,
       "rumors": [
-        {
-          "date": "Mar 15, 2026",
-          "club": "FC Midtjylland, Randers FC",
-          "detail": "Danish Superliga clubs tracking Gyau after standout displays for Asante Kotoko",
-          "source": "GHANAsoccernet",
-          "sourceUrl": "https://ghanasoccernet.com/danish-top-flight-duo-midtjylland-and-randers-lead-race-for-hubert-gyau",
-          "tier": 3,
-          "status": "rumour",
-          "recent": true
-        },
         {
           "date": "Jan 26, 2026",
           "club": "Kaizer Chiefs",
