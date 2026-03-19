@@ -2,7 +2,7 @@
   "meta": {
     "lastSweep": "Mar 16, 2026",
     "sweepNumber": 1,
-    "playerCount": 2
+    "playerCount": 3
   },
   "players": [
     {
@@ -95,6 +95,54 @@
           "tier": 3,
           "status": "rumour",
           "recent": true
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Mohamed Camara",
+      "country": "Guinea",
+      "flag": "🇬🇳",
+      "position": "GK",
+      "birthYear": 2000,
+      "currentClub": "Asante Kotoko SC",
+      "status": "active",
+      "sweepTier": "C",
+      "altSpellings": [
+        "Mohammed Camara",
+        "Mohamed Camara (Guinea)"
+      ],
+      "confusionRisk": "Mohamed Camara (b. 2000, Al-Sadd) — Malian defensive midfielder in Qatar, different player",
+      "rumors": [
+        {
+          "date": "Aug 21, 2025",
+          "club": "Kaizer Chiefs",
+          "detail": "South African giants Kaizer Chiefs reported to be tracking Guinean international and Asante Kotoko goalkeeper Mohamed Camara. Clubs in ongoing discussions to reach agreement on potential transfer. Camara under contract with Kotoko until June 2026.",
+          "source": "Transfer media reports",
+          "sourceUrl": null,
+          "tier": 3,
+          "status": "rumour",
+          "recent": false
+        },
+        {
+          "date": "Jan 23, 2026",
+          "club": "Kaizer Chiefs",
+          "detail": "Asante Kotoko's star goalkeeper Mohamed Camara attracting interest from top African clubs with Kaizer Chiefs emerging as frontrunner. Kotoko management preparing for potential transfer and expected to demand significant transfer fee given Camara's importance to team and contract status.",
+          "source": "Transfer monitoring outlets",
+          "sourceUrl": null,
+          "tier": 2,
+          "status": "advanced",
+          "recent": false
+        },
+        {
+          "date": "Jan 27, 2026",
+          "club": "Asante Kotoko",
+          "detail": "Kumasi Asante Kotoko rejected bids for goalkeeper Mohammed Camara. Club determined to retain talented goalkeeper, citing his importance to team's success, experience, and leadership crucial to Kotoko's performance.",
+          "source": "Asante Kotoko official statement",
+          "sourceUrl": null,
+          "tier": 1,
+          "status": "confirmed",
+          "recent": false
         }
       ]
     }
