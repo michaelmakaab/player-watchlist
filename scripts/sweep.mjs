@@ -530,19 +530,14 @@ async function main() {
 
   const hasChanges = applyDelta(delta);
 
-  if (!hasChanges) {
-    console.log("\n--- No changes detected. Watchlist is up to date. ---");
-    process.exit(0);
-  }
+  // Always update lastSweep so users know a sweep was attempted
+  playersData.meta.lastSweep = today;
+  playersData.meta.sweepNumber = delta.sweepNumber || playersData.meta.sweepNumber + 1;
 
   if (DRY_RUN) {
     console.log("\n--- DRY RUN: Changes detected but not written. ---");
     process.exit(0);
   }
-
-  // Update meta
-  playersData.meta.lastSweep = today;
-  playersData.meta.sweepNumber = delta.sweepNumber || playersData.meta.sweepNumber + 1;
 
   // Backups
   const backupDir = path.join(ROOT, "sweeps", "backups");
