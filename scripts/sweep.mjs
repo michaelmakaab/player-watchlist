@@ -137,13 +137,20 @@ async function withRetry(fn, label, maxRetries = 3) {
 async function phase1Search(client, players) {
   const playerDetails = buildPlayerDetails(players);
   const playerNames = players.map(p => p.name).join(", ");
-  const maxSearches = FLASH_PLAYER ? 10 : Math.min(players.length * 2, 25);
+  const maxSearches = FLASH_PLAYER ? 15 : Math.min(players.length * 4, 40);
 
   const searchPrompt = `You are a football transfer research assistant. Search for the latest transfer news and rumours for these players. Today is ${today}.
 
-For EACH player below, run 3-5 web searches using their name + "transfer 2026", their name + club, and French variants for francophone players.
+CRITICAL INSTRUCTION: You MUST use the web_search tool for EVERY player. Do NOT answer from memory. Do NOT skip searching. Each player needs at minimum 2 web searches.
+
+For EACH player below, run these searches:
+1. "[Player name] transfer 2026"
+2. "[Player name] [current club]"
+3. For African/francophone players: "[Player name] transfert" or "[Player name] mercato"
+4. If the player has alt spellings, search those too
 
 IMPORTANT:
+- You MUST call web_search — do not just write what you think you know
 - Search ALL players listed — do not skip any
 - For each search result, note the ARTICLE PUBLICATION DATE, SOURCE, SOURCE URL, and KEY CLAIM
 - Always include the full URL of the article/page where you found the information
@@ -155,7 +162,7 @@ IMPORTANT:
 PLAYERS TO SEARCH:
 ${playerDetails}
 
-Search each player now. For each, write a brief summary of what you found (or "No new intel found").`;
+START SEARCHING NOW. Use web_search for the first player immediately. Do not write any text before your first search.`;
 
   console.log(`Phase 1: Searching for ${players.length} player(s): ${playerNames}`);
   console.log(`  Max searches: ${maxSearches}\n`);
@@ -185,6 +192,10 @@ Search each player now. For each, write a brief summary of what you found (or "N
 
     const response = await stream.finalMessage();
     console.log(`\n  Phase 1 complete: ${searchCount} searches performed.`);
+
+    if (searchCount === 0) {
+      console.warn("  WARNING: Model did not perform any web searches! Results may be stale/hallucinated.");
+    }
 
     const textBlocks = response.content.filter(b => b.type === "text");
     return textBlocks.map(b => b.text).join("\n");
