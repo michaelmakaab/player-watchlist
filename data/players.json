@@ -2,7 +2,7 @@
   "meta": {
     "lastSweep": "Mar 16, 2026",
     "sweepNumber": 1,
-    "playerCount": 3
+    "playerCount": 4
   },
   "players": [
     {
@@ -143,6 +143,33 @@
           "tier": 1,
           "status": "confirmed",
           "recent": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Ayabulela Maxwele",
+      "country": "South Africa",
+      "flag": "🇿🇦",
+      "position": "AM",
+      "birthYear": 2000,
+      "currentClub": "Lamontville Golden Arrows FC",
+      "status": "active",
+      "sweepTier": "C",
+      "altSpellings": [
+        "Aya Maxwele"
+      ],
+      "confusionRisk": null,
+      "rumors": [
+        {
+          "date": "Mar 26, 2026",
+          "club": "Orlando Pirates",
+          "detail": "Orlando Pirates in advanced talks to sign Ayabulela Maxwele from Golden Arrows as a central midfielder/winger. Potentially targeting as replacement for departing players Mofokeng and Appollis.",
+          "source": "Soccer Beat podcast (Kurt Buckerfield), Soccer Bullet",
+          "sourceUrl": null,
+          "tier": 2,
+          "status": "advanced",
+          "recent": true
         }
       ]
     }
