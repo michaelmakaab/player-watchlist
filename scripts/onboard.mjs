@@ -39,6 +39,7 @@ const country = getArg("--country", "");
 const position = getArg("--position", "");
 const currentClub = getArg("--club", "");
 const extraContext = getArg("--context", "");
+const isCoach = extraContext.includes("TYPE: COACH") || position === "Coach" || (position && position.toLowerCase().includes("coach"));
 
 // ── Country → Flag emoji mapping ──────────────────────────────────────
 const COUNTRY_FLAGS = {
@@ -213,7 +214,40 @@ async function phase1Verify(client) {
   const countryHint = autoDetectCountry ? "Unknown — please determine from search results" : country;
   const positionHint = autoDetectPosition ? "Unknown — please determine from search results" : position;
 
-  const searchPrompt = `You are a football player identity verification assistant. Today is ${today}.
+  const personType = isCoach ? "coach" : "player";
+  const searchPrompt = isCoach
+    ? `You are a football coach identity verification assistant. Today is ${today}.
+
+A user has suggested adding this COACH to a football watchlist:
+- Name: ${playerName}
+- Birth Year: ~${birthYear} (approximate)
+- Country: ${countryHint}
+- Role: ${position || "Coach"}
+- Current Club: ${currentClub}
+${extraContext ? `- Additional context: ${extraContext}` : ""}
+
+Your task:
+1. Search for this coach to VERIFY their identity
+2. Run 5-8 web searches:
+   - "${playerName}" ${currentClub} coach football
+   - "${playerName}" ${currentClub} manager
+   - "${playerName}" football coach ${birthYear}
+   - "${playerName}" coaching career
+   - "${playerName}" appointed manager
+   - Also try French variants if the club/name suggests a francophone coach
+3. Determine if this is a REAL football coach matching the provided details
+4. IMPORTANT: Determine the coach's NATIONALITY from search results if not provided
+5. Check for CONFUSION RISKS — players or other coaches with similar names
+6. Gather any available info: coaching career, playing career, qualifications, achievements
+7. Search for any recent coaching appointments, sackings, or links to other clubs
+
+Report your findings clearly. For each search, note what you found or didn't find.
+Include the coach's COUNTRY in your findings.
+Rate your confidence:
+- HIGH: Found in 2+ independent sources, all details match
+- MEDIUM: Found in 1 source, most details match
+- LOW: Could not confirm, or found a major confusion risk`
+    : `You are a football player identity verification assistant. Today is ${today}.
 
 A user has suggested adding this player to a transfer tracker:
 - Name: ${playerName}
@@ -252,7 +286,7 @@ Rate your confidence:
     const stream = client.messages.stream({
       model: MODEL,
       max_tokens: 3000,
-      system: "You are a football player identity verification agent. Search for the player and report findings concisely. Do NOT produce JSON.",
+      system: `You are a football ${personType} identity verification agent. Search for the ${personType} and report findings concisely. Do NOT produce JSON.`,
       tools: [{ type: "web_search_20250305", name: "web_search", max_uses: 8 }],
       messages: [{ role: "user", content: searchPrompt }]
     });
@@ -282,7 +316,7 @@ async function phase2Generate(client, findings) {
 
   const countryFlagList = Object.entries(COUNTRY_FLAGS).map(([c, f]) => `${c}: ${f}`).join(", ");
 
-  const jsonPrompt = `You are the JSON formatter for the Player Watchlist. Based on the verification findings below, produce the structured data for a new player.
+  const jsonPrompt = `You are the JSON formatter for the Player Watchlist. Based on the verification findings below, produce the structured data for a new ${personType}.
 
 TODAY'S DATE: ${today}
 
@@ -303,7 +337,7 @@ ${findings}
 3. For the player object, use EXACTLY this schema — no extra fields
 4. IMPORTANT: Determine the correct COUNTRY and POSITION from the search findings
 5. Use the correct flag emoji for the country. Available flags: ${countryFlagList}
-6. Valid positions: GK, CB, LB, RB, DF, DM, CM, MF, AM, LW, RW, FW, ST
+6. Valid positions: GK, CB, LB, RB, DF, DM, CM, MF, AM, LW, RW, FW, ST, Coach, Head Coach, Assistant Coach, Academy Director, Scout
 7. altSpellings: include common alternate spellings found during search
 8. confusionRisk: if there's an older/more famous player with a similar name, describe them (format: "Name (b.YYYY, Club)")
 9. CRITICAL: Include ALL transfer rumours found during verification in the rumors[] array. Search findings from the last 3 months should all be included. Each rumour needs: date, club, detail, source, sourceUrl (if available), tier (1-4), status, and recent (true for last 4 weeks, false otherwise).

@@ -15,7 +15,7 @@ jobs:
   onboard:
     runs-on: ubuntu-latest
     if: |
-      (github.event_name == 'issues' && contains(github.event.issue.labels.*.name, 'player-suggestion')) ||
+      (github.event_name == 'issues' && (contains(github.event.issue.labels.*.name, 'player-suggestion') || contains(github.event.issue.labels.*.name, 'coach-suggestion'))) ||
       (github.event_name == 'issue_comment' && contains(github.event.issue.labels.*.name, 'needs-confirmation') && github.event.comment.user.login == github.event.issue.user.login)
     steps:
       - name: Checkout

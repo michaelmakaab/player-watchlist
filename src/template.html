@@ -839,18 +839,25 @@ renderPending();
 <div class="modal-overlay" id="addPlayerModal" onclick="if(event.target===this)closeAddPlayerModal()">
   <div class="modal">
     <div class="modal-header">
-      <span class="modal-title">Suggest a Player</span>
+      <span class="modal-title" id="modalTitle">Suggest a Player</span>
       <button class="modal-close" onclick="closeAddPlayerModal()" aria-label="Close">&times;</button>
     </div>
     <div class="modal-body" id="modalBody">
       <form id="addPlayerForm" onsubmit="return submitPlayer(event)">
         <div class="form-group">
-          <label class="form-label">Player Name <span class="required">*</span></label>
+          <label class="form-label">Type</label>
+          <select class="form-select" id="formType" onchange="toggleFormType()">
+            <option value="player">Player</option>
+            <option value="coach">Coach</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label"><span id="formNameLabel">Name</span> <span class="required">*</span></label>
           <input class="form-input" type="text" id="formName" placeholder="e.g. Amadou Diallo" required>
         </div>
         <div class="form-row">
           <div class="form-group">
-            <label class="form-label">Current Club <span class="required">*</span></label>
+            <label class="form-label"><span id="formClubLabel">Current Club</span> <span class="required">*</span></label>
             <input class="form-input" type="text" id="formClub" placeholder="e.g. Diambars FC" required>
           </div>
           <div class="form-group">
@@ -858,8 +865,12 @@ renderPending();
             <input class="form-input" type="number" id="formYear" placeholder="e.g. 2008" required>
           </div>
         </div>
+        <div class="form-group" id="formRoleGroup" style="display:none">
+          <label class="form-label">Role</label>
+          <input class="form-input" type="text" id="formRole" placeholder="e.g. Head Coach, Assistant, Academy Director">
+        </div>
         <div class="form-error hidden" id="formError"></div>
-        <button type="submit" class="form-submit" id="formSubmitBtn">SUBMIT PLAYER</button>
+        <button type="submit" class="form-submit" id="formSubmitBtn">SUBMIT</button>
       </form>
     </div>
   </div>
@@ -888,7 +899,14 @@ function resetModalForm() {
   const err = document.getElementById("formError");
   if (err) { err.classList.add("hidden"); err.textContent = ""; }
   const btn = document.getElementById("formSubmitBtn");
-  if (btn) { btn.disabled = false; btn.textContent = "SUBMIT PLAYER"; }
+  if (btn) { btn.disabled = false; btn.textContent = "SUBMIT"; }
+}
+function toggleFormType() {
+  const isCoach = document.getElementById("formType").value === "coach";
+  document.getElementById("formRoleGroup").style.display = isCoach ? "block" : "none";
+  document.getElementById("formName").placeholder = isCoach ? "e.g. Ibrahim Kamara" : "e.g. Amadou Diallo";
+  document.getElementById("formClub").placeholder = isCoach ? "e.g. ASEC Mimosas" : "e.g. Diambars FC";
+  document.querySelector(".modal-title").textContent = isCoach ? "Suggest a Coach" : "Suggest a Player";
 }
 
 async function submitPlayer(e) {
@@ -900,9 +918,11 @@ async function submitPlayer(e) {
   const name = document.getElementById("formName").value.trim();
   const club = document.getElementById("formClub").value.trim();
   const year = document.getElementById("formYear").value.trim();
+  const type = document.getElementById("formType").value;
+  const role = document.getElementById("formRole")?.value?.trim() || "";
 
   // Validate
-  if (!name || name.length < 2) { showFormError("Player name must be at least 2 characters."); return; }
+  if (!name || name.length < 2) { showFormError("Name must be at least 2 characters."); return; }
   if (!club) { showFormError("Current club is required."); return; }
   const y = parseInt(year);
   if (!y || y < 1900 || y > new Date().getFullYear()) { showFormError("Please enter a valid year of birth."); return; }
@@ -910,13 +930,19 @@ async function submitPlayer(e) {
   btn.disabled = true;
   btn.textContent = "SUBMITTING...";
 
+  const isCoach = type === "coach";
+  const positionField = isCoach ? (role || "Coach") : "_Auto-detect_";
+  const contextField = isCoach ? "TYPE: COACH" + (role ? ". Role: " + role : "") : "_No response_";
+  const issueLabel = isCoach ? "coach-suggestion" : "player-suggestion";
+  const titlePrefix = isCoach ? "[Coach Suggestion] " : "[Player Suggestion] ";
+
   // Build issue body — bot will auto-detect country and position
   const body = "### Player Name\n\n" + name +
     "\n\n### Birth Year\n\n" + year +
     "\n\n### Country\n\n_Auto-detect_" +
-    "\n\n### Position\n\n_Auto-detect_" +
+    "\n\n### Position\n\n" + positionField +
     "\n\n### Current Club\n\n" + club +
-    "\n\n### Additional Context (optional)\n\n_No response_";
+    "\n\n### Additional Context (optional)\n\n" + contextField;
 
   try {
     const resp = await fetch("https://api.github.com/repos/" + REPO_OWNER + "/" + REPO_NAME + "/issues", {
@@ -927,9 +953,9 @@ async function submitPlayer(e) {
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
-        title: "[Player Suggestion] " + name,
+        title: titlePrefix + name,
         body: body,
-        labels: ["player-suggestion"]
+        labels: [issueLabel]
       })
     });
 
