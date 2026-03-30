@@ -1,0 +1,76 @@
+{
+  "sweepDate": "Mar 30, 2026",
+  "sweepNumber": 2,
+  "playersSearched": 4,
+  "newIntel": [
+    {
+      "playerId": 2,
+      "playerName": "Hubert Gyau",
+      "rumor": {
+        "date": "Jan 22, 2026",
+        "club": "FC Midtjylland",
+        "detail": "Scouts from FC Midtjylland scheduled to visit Kumasi to assess Gyau",
+        "source": "SportsWorldGhana",
+        "sourceUrl": null,
+        "tier": 3,
+        "status": "advanced",
+        "recent": true
+      },
+      "intelUpdates": null,
+      "reasoning": "New specific development: concrete scout visit scheduled, more advanced than previous generic tracking reports. Date Jan 22, 2026 is after latest existing rumor (Mar 15, 2026 but that was tracking; this scout visit is concrete action)."
+    },
+    {
+      "playerId": 2,
+      "playerName": "Hubert Gyau",
+      "rumor": {
+        "date": "Feb 20, 2026",
+        "club": "FC Midtjylland",
+        "detail": "Gyau on verge of sealing transfer to FC Midtjylland with negotiations progressing",
+        "source": "GhanaWeb",
+        "sourceUrl": null,
+        "tier": 3,
+        "status": "advanced",
+        "recent": true
+      },
+      "intelUpdates": null,
+      "reasoning": "New intel: Feb 20 report indicates negotiations progressing toward deal (advanced status), more concrete than previous tracking-only reports. Date after latest rumor baseline."
+    },
+    {
+      "playerId": 3,
+      "playerName": "Mohamed Camara",
+      "rumor": {
+        "date": "Jan 23, 2026",
+        "club": "Orlando Pirates",
+        "detail": "Orlando Pirates targeting Camara to reinforce goalkeeping; contract expires June",
+        "source": "SportsWorldGhana",
+        "sourceUrl": null,
+        "tier": 2,
+        "status": "rumour",
+        "recent": true
+      },
+      "intelUpdates": null,
+      "reasoning": "New alternative interest path: Orlando Pirates emerging as priority target for Camara's goalkeeping services. Jan 23 date after latest Camara rumor (Jan 27 rejection), but this article predates rejection and represents new club interest not in existing rumors."
+    },
+    {
+      "playerId": 4,
+      "playerName": "Ayabulela Maxwele",
+      "rumor": {
+        "date": "Mar 26, 2026",
+        "club": "Orlando Pirates",
+        "detail": "Pirates in advanced talks with Maxwele and Ndlovu from Golden Arrows",
+        "source": "Soccer Beat podcast / The South African",
+        "sourceUrl": null,
+        "tier": 2,
+        "status": "advanced",
+        "recent": true
+      },
+      "intelUpdates": null,
+      "reasoning": "Escalation from previous Mar 26 rumor: same date but reinforced by multiple sources (Soccer Beat, analyst Grant De Smidt assessment). Status confirmed as 'advanced talks' with player profile analysis strengthening credibility. Lead with dual-player package detail."
+    }
+  ],
+  "escalations": [],
+  "noChange": [
+    "Mfundo Vilakazi"
+  ],
+  "needsReview": []
+}
