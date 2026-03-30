@@ -190,6 +190,7 @@ const today = new Date().toLocaleDateString("en-US", {
 });
 
 const MODEL = process.env.SWEEP_MODEL || "claude-haiku-4-5-20251001";
+const personType = isCoach ? "coach" : "player";
 
 // ── Retry helper ──────────────────────────────────────────────────────
 async function withRetry(fn, label, maxRetries = 3) {
@@ -214,7 +215,6 @@ async function phase1Verify(client) {
   const countryHint = autoDetectCountry ? "Unknown — please determine from search results" : country;
   const positionHint = autoDetectPosition ? "Unknown — please determine from search results" : position;
 
-  const personType = isCoach ? "coach" : "player";
   const searchPrompt = isCoach
     ? `You are a football coach identity verification assistant. Today is ${today}.
 
