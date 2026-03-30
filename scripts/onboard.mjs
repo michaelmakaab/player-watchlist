@@ -33,12 +33,12 @@ function getArg(flag, fallback) {
   return idx !== -1 && args[idx + 1] ? args[idx + 1] : fallback;
 }
 
-const playerName = getArg("--name", "");
-const birthYear = parseInt(getArg("--year", "0"), 10);
-const country = getArg("--country", "");
-const position = getArg("--position", "");
-const currentClub = getArg("--club", "");
-const extraContext = getArg("--context", "");
+const playerName = getArg("--name", "") || process.env.ONBOARD_NAME || "";
+const birthYear = parseInt(getArg("--year", "0") || process.env.ONBOARD_YEAR || "0", 10);
+const country = getArg("--country", "") || process.env.ONBOARD_COUNTRY || "";
+const position = getArg("--position", "") || process.env.ONBOARD_POSITION || "";
+const currentClub = getArg("--club", "") || process.env.ONBOARD_CLUB || "";
+const extraContext = getArg("--context", "") || process.env.ONBOARD_CONTEXT || "";
 const isCoach = extraContext.includes("TYPE: COACH") || position === "Coach" || (position && position.toLowerCase().includes("coach"));
 
 // ── Country → Flag emoji mapping ──────────────────────────────────────

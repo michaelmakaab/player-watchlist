@@ -90,21 +90,32 @@ jobs:
         id: onboard
         env:
           ANTHROPIC_API_KEY: ${{ secrets.TT }}
+          ONBOARD_NAME: ${{ steps.parse.outputs.player_name }}
+          ONBOARD_YEAR: ${{ steps.parse.outputs.birth_year }}
+          ONBOARD_COUNTRY: ${{ steps.parse.outputs.country }}
+          ONBOARD_POSITION: ${{ steps.parse.outputs.position }}
+          ONBOARD_CLUB: ${{ steps.parse.outputs.current_club }}
+          ONBOARD_CONTEXT: ${{ steps.parse.outputs.context }}
         run: |
           node scripts/onboard.mjs \
-            --name "${{ steps.parse.outputs.player_name }}" \
-            --year "${{ steps.parse.outputs.birth_year }}" \
-            --country "${{ steps.parse.outputs.country }}" \
-            --position "${{ steps.parse.outputs.position }}" \
-            --club "${{ steps.parse.outputs.current_club }}" \
-            --context "${{ steps.parse.outputs.context }}" \
-            > /tmp/onboard_result.json 2> /tmp/onboard_log.txt
+            --name "$ONBOARD_NAME" \
+            --year "$ONBOARD_YEAR" \
+            --country "$ONBOARD_COUNTRY" \
+            --position "$ONBOARD_POSITION" \
+            --club "$ONBOARD_CLUB" \
+            --context "$ONBOARD_CONTEXT" \
+            > /tmp/onboard_result.json 2> /tmp/onboard_log.txt || ONBOARD_FAILED=1
 
           echo "=== Onboard Log ==="
-          cat /tmp/onboard_log.txt
+          cat /tmp/onboard_log.txt || true
           echo ""
           echo "=== Onboard Result ==="
-          cat /tmp/onboard_result.json
+          cat /tmp/onboard_result.json || true
+
+          if [ "${ONBOARD_FAILED}" = "1" ]; then
+            echo "::error::Onboard script failed — see log above"
+            exit 1
+          fi
 
       - name: Process result
         id: process
