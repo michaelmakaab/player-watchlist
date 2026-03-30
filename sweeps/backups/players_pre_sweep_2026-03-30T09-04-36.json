@@ -1,7 +1,7 @@
 {
   "meta": {
-    "lastSweep": "Mar 30, 2026",
-    "sweepNumber": 2,
+    "lastSweep": "Mar 16, 2026",
+    "sweepNumber": 1,
     "playerCount": 4
   },
   "players": [
@@ -67,26 +67,6 @@
       "confusionRisk": null,
       "rumors": [
         {
-          "date": "Feb 20, 2026",
-          "club": "FC Midtjylland",
-          "detail": "Gyau on verge of sealing transfer to FC Midtjylland with negotiations progressing",
-          "source": "GhanaWeb",
-          "sourceUrl": null,
-          "tier": 3,
-          "status": "advanced",
-          "recent": true
-        },
-        {
-          "date": "Jan 22, 2026",
-          "club": "FC Midtjylland",
-          "detail": "Scouts from FC Midtjylland scheduled to visit Kumasi to assess Gyau",
-          "source": "SportsWorldGhana",
-          "sourceUrl": null,
-          "tier": 3,
-          "status": "advanced",
-          "recent": true
-        },
-        {
           "date": "Mar 15, 2026",
           "club": "FC Midtjylland, Randers FC",
           "detail": "Danish Superliga clubs tracking Gyau after standout displays for Asante Kotoko",
@@ -135,16 +115,6 @@
       "confusionRisk": "Mohamed Camara (b. 2000, Al-Sadd) — Malian defensive midfielder in Qatar, different player",
       "rumors": [
         {
-          "date": "Jan 23, 2026",
-          "club": "Orlando Pirates",
-          "detail": "Orlando Pirates targeting Camara to reinforce goalkeeping; contract expires June",
-          "source": "SportsWorldGhana",
-          "sourceUrl": null,
-          "tier": 2,
-          "status": "rumour",
-          "recent": true
-        },
-        {
           "date": "Aug 21, 2025",
           "club": "Kaizer Chiefs",
           "detail": "South African giants Kaizer Chiefs reported to be tracking Guinean international and Asante Kotoko goalkeeper Mohamed Camara. Clubs in ongoing discussions to reach agreement on potential transfer. Camara under contract with Kotoko until June 2026.",
@@ -191,16 +161,6 @@
       ],
       "confusionRisk": null,
       "rumors": [
-        {
-          "date": "Mar 26, 2026",
-          "club": "Orlando Pirates",
-          "detail": "Pirates in advanced talks with Maxwele and Ndlovu from Golden Arrows",
-          "source": "Soccer Beat podcast / The South African",
-          "sourceUrl": null,
-          "tier": 2,
-          "status": "advanced",
-          "recent": true
-        },
         {
           "date": "Mar 26, 2026",
           "club": "Orlando Pirates",
