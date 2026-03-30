@@ -2,7 +2,7 @@
   "meta": {
     "lastSweep": "Mar 30, 2026",
     "sweepNumber": 2,
-    "playerCount": 4
+    "playerCount": 5
   },
   "players": [
     {
@@ -212,6 +212,20 @@
           "recent": true
         }
       ]
+    },
+    {
+      "id": 5,
+      "name": "Manqoba Mngqithi",
+      "country": "South Africa",
+      "flag": "🇿🇦",
+      "position": "Head Coach",
+      "birthYear": 1971,
+      "currentClub": "Lamontville Golden Arrows",
+      "status": "no_rumours",
+      "sweepTier": "C",
+      "altSpellings": [],
+      "confusionRisk": null,
+      "rumors": []
     }
   ]
 }
