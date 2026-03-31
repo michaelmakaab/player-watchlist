@@ -179,7 +179,6 @@ START SEARCHING NOW. Use web_search for the first player immediately. Do not wri
           max_uses: maxSearches
         }
       ],
-      tool_choice: { type: "any" },
       messages: [{ role: "user", content: searchPrompt }]
     });
 
