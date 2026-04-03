@@ -1,0 +1,48 @@
+{
+  "sweepDate": "Apr 3, 2026",
+  "sweepNumber": 3,
+  "playersSearched": 5,
+  "newIntel": [
+    {
+      "playerId": 3,
+      "playerName": "Mohamed Camara",
+      "rumor": {
+        "date": "Jan 23, 2026",
+        "club": "Orlando Pirates",
+        "detail": "Pirates targeting Camara to reinforce goalkeeping; contract expires June",
+        "source": "SportsWorldGhana",
+        "sourceUrl": "https://sportsworldghana.com/kotoko-goalkeeper-mohammed-camara-emerges-as-top-target-for-south-african-giants-orlando-pirates/",
+        "tier": 2,
+        "status": "rumour",
+        "recent": true
+      },
+      "intelUpdates": null,
+      "reasoning": "This Orlando Pirates interest rumour dated Jan 23, 2026 is genuinely new and does not appear in the existing 4 rumours for Camara. Latest existing rumour is Jan 27, 2026 (Asante Kotoko rejection), so this Jan 23 finding predates and adds new intel about Pirates' specific interest."
+    },
+    {
+      "playerId": 5,
+      "playerName": "Manqoba Mngqithi",
+      "rumor": {
+        "date": "Mar 29, 2026",
+        "club": "Kaizer Chiefs",
+        "detail": "Kaizer Chiefs in early discussions with Mngqithi; Golden Arrows chair opposes move",
+        "source": "The South African",
+        "sourceUrl": "https://www.thesouthafrican.com/sport/soccer/psl-south-africa/chiefs-coaching-update-mngqithi-talks-hit-hurdle-with-boss/",
+        "tier": 2,
+        "status": "rumour",
+        "recent": true
+      },
+      "intelUpdates": {
+        "status": "active_rumours"
+      },
+      "reasoning": "Player #5 had zero existing rumours (status: no_rumours). This is genuinely NEW intel: Kaizer Chiefs representatives entered early discussions with Mngqithi on Mar 29, 2026, with complications from Golden Arrows chairlady. Satisfies all delta criteria: new to player record, dated article (Mar 29), identity verified, credible T2 source."
+    }
+  ],
+  "escalations": [],
+  "noChange": [
+    "Mfundo Obrigado Vilakazi",
+    "Hubert Gyau",
+    "Ayabulela Maxwele"
+  ],
+  "needsReview": []
+}

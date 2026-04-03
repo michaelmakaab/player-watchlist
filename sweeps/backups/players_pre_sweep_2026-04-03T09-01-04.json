@@ -1,7 +1,7 @@
 {
   "meta": {
-    "lastSweep": "Apr 3, 2026",
-    "sweepNumber": 3,
+    "lastSweep": "Mar 30, 2026",
+    "sweepNumber": 2,
     "playerCount": 5
   },
   "players": [
@@ -225,18 +225,7 @@
       "sweepTier": "C",
       "altSpellings": [],
       "confusionRisk": null,
-      "rumors": [
-        {
-          "date": "Mar 29, 2026",
-          "club": "Kaizer Chiefs",
-          "detail": "Kaizer Chiefs in early discussions with Mngqithi; Golden Arrows chair opposes move",
-          "source": "The South African",
-          "sourceUrl": "https://www.thesouthafrican.com/sport/soccer/psl-south-africa/chiefs-coaching-update-mngqithi-talks-hit-hurdle-with-boss/",
-          "tier": 2,
-          "status": "rumour",
-          "recent": true
-        }
-      ]
+      "rumors": []
     }
   ]
 }
