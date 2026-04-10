@@ -1,0 +1,85 @@
+{
+  "sweepDate": "Apr 10, 2026",
+  "sweepNumber": 5,
+  "playersSearched": 5,
+  "newIntel": [
+    {
+      "playerId": 2,
+      "playerName": "Hubert Gyau",
+      "rumor": {
+        "date": "Apr 4, 2026",
+        "club": "Orlando Pirates",
+        "detail": "Pirates preparing ~$200k offer; Kotoko valuation dispute",
+        "source": "Soccer Laduma",
+        "sourceUrl": "https://www.soccerladuma.co.za/psl/siyagobhoza/conflicting-signals-in-hubert-gyau-saga-as-orlando-pirates-contact-denied",
+        "tier": 3,
+        "status": "rumour",
+        "recent": true
+      },
+      "intelUpdates": null,
+      "reasoning": "New club interest (Orlando Pirates) not previously tracked. Date Apr 4, 2026 is after latest existing rumor (Mar 15, 2026). Passes date gating."
+    },
+    {
+      "playerId": 2,
+      "playerName": "Hubert Gyau",
+      "rumor": {
+        "date": "Feb 23, 2026",
+        "club": "Prosport International Agency",
+        "detail": "Signed to Prosport agency; 21 apps, 4 goals for Kotoko",
+        "source": "GHANAsoccernet",
+        "sourceUrl": "https://ghanasoccernet.com/hubert-gyau-is-an-incredible-player-prosport-international-agency-ceo-mike-makaab",
+        "tier": 2,
+        "status": "confirmed",
+        "recent": true
+      },
+      "intelUpdates": null,
+      "reasoning": "Agent signing confirmation is new intel. Date Feb 23, 2026 is after latest existing rumor (Mar 15, 2026 on tracking). Agent change is material update to player's representation."
+    },
+    {
+      "playerId": 5,
+      "playerName": "Manqoba Mngqithi",
+      "rumor": {
+        "date": "Apr 8, 2026",
+        "club": "Kaizer Chiefs",
+        "detail": "5-0 Pirates loss raises doubts over Mngqithi for Chiefs role",
+        "source": "Goal.com South Africa",
+        "sourceUrl": "https://www.goal.com/en-za/lists/manqoba-mngqithi-s-chances-of-coaching-kaizer-chiefs-over-amakhosi-fans-won-t-accept-someone-who-loses-to-orlando-pirates-with-such-an-embarrassing-scoreline/blt830df4e2e7fdd8ad",
+        "tier": 2,
+        "status": "advanced",
+        "recent": true
+      },
+      "intelUpdates": null,
+      "reasoning": "New development in existing Chiefs negotiation. Apr 8, 2026 is after latest existing Mngqithi rumor (Mar 29, 2026). Shows status escalation from early talks to questioned viability due to match performance."
+    },
+    {
+      "playerId": 5,
+      "playerName": "Manqoba Mngqithi",
+      "rumor": {
+        "date": "Dec 9, 2025",
+        "club": "Black Lions (Botswana)",
+        "detail": "Met with Black Lions owner Tendani Sebata; discussed possible deal",
+        "source": "Goal.com South Africa",
+        "sourceUrl": "https://www.goal.com/en-za/lists/manqoba-mngqithi-lands-in-foreign-country-former-kaizer-chiefs-and-orlando-pirates-target-meets-club-boss-amid-uncertainty-with-lamontville-golden-arrows-future/blt08f93151ef7791cd",
+        "tier": 2,
+        "status": "rumour",
+        "recent": true
+      },
+      "intelUpdates": null,
+      "reasoning": "Earlier intel (Dec 9, 2025) not captured in existing rumors list (earliest is Mar 5, 2026). Material alternative club interest predating Chiefs discussions. Passes date gating against latest Mngqithi rumor (Mar 29, 2026)."
+    }
+  ],
+  "escalations": [],
+  "noChange": [
+    "Mfundo Obrigado Vilakazi",
+    "Mohamed Camara",
+    "Ayabulela Maxwele"
+  ],
+  "needsReview": [
+    {
+      "playerId": 2,
+      "playerName": "Hubert Gyau",
+      "detail": "Apr 4 Soccer Laduma report claims Pirates made contact/preparing offer; same source immediately contradicts stating 'no formal contact made by Pirates'",
+      "reason": "Conflicting signals within single source. Unclear if Pirates approach is genuine or speculative. Agent (Feb 18) denied any approach at that time. Status ambiguous between rumour and false alarm."
+    }
+  ]
+}
