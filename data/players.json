@@ -1,7 +1,7 @@
 {
   "meta": {
     "lastSweep": "Apr 13, 2026",
-    "sweepNumber": 6,
+    "sweepNumber": 7,
     "playerCount": 5
   },
   "players": [
@@ -21,6 +21,16 @@
       ],
       "confusionRisk": null,
       "rumors": [
+        {
+          "date": "Apr 12, 2026",
+          "club": "Kaizer Chiefs",
+          "detail": "Sub in 2-0 win vs TS Galaxy (4th straight win). 13 apps, 2G 1A. Yellow card caution ahead of Soweto derby Apr 26.",
+          "source": "Soccer Laduma / KickOff",
+          "sourceUrl": "https://www.soccerladuma.co.za/psl/kaizer-chiefs/betway-premiership-report-kaizer-chiefs-v-ts-galaxy-12-april-2026",
+          "tier": 1,
+          "status": "confirmed",
+          "recent": true
+        },
         {
           "date": "Mar 15, 2026",
           "club": "Kaizer Chiefs",
@@ -277,11 +287,21 @@
       "confusionRisk": null,
       "rumors": [
         {
+          "date": "Apr 12, 2026",
+          "club": "Golden Arrows",
+          "detail": "Bounce-back 1-0 win vs Durban City after 5-0 drubbing. Still 8th, 28 pts from 22 matches.",
+          "source": "Vodacom Soccer / IOL",
+          "sourceUrl": "https://vodacomsoccer.com/news/manqoba-mngqithi-demanding-more-from-golden-arrows-after-narrow-durban-city-win",
+          "tier": 1,
+          "status": "confirmed",
+          "recent": true
+        },
+        {
           "date": "Apr 8, 2026",
           "club": "Kaizer Chiefs",
           "detail": "5-0 loss to Pirates has damaged credibility; Chiefs move now unlikely for next season",
           "source": "Goal.com South Africa",
-          "sourceUrl": null,
+          "sourceUrl": "https://www.goal.com/en-za/lists/manqoba-mngqithi-s-chances-of-coaching-kaizer-chiefs-over-amakhosi-fans-won-t-accept-someone-who-loses-to-orlando-pirates-with-such-an-embarrassing-scoreline/blt830df4e2e7fdd8ad",
           "tier": 2,
           "status": "rumour",
           "recent": true
@@ -304,16 +324,6 @@
           "sourceUrl": "https://www.goal.com/en-za/lists/manqoba-mngqithi-lands-in-foreign-country-former-kaizer-chiefs-and-orlando-pirates-target-meets-club-boss-amid-uncertainty-with-lamontville-golden-arrows-future/blt08f93151ef7791cd",
           "tier": 2,
           "status": "rumour",
-          "recent": true
-        },
-        {
-          "date": "Apr 8, 2026",
-          "club": "Kaizer Chiefs",
-          "detail": "5-0 Pirates loss raises doubts over Mngqithi for Chiefs role",
-          "source": "Goal.com South Africa",
-          "sourceUrl": "https://www.goal.com/en-za/lists/manqoba-mngqithi-s-chances-of-coaching-kaizer-chiefs-over-amakhosi-fans-won-t-accept-someone-who-loses-to-orlando-pirates-with-such-an-embarrassing-scoreline/blt830df4e2e7fdd8ad",
-          "tier": 2,
-          "status": "advanced",
           "recent": true
         },
         {
