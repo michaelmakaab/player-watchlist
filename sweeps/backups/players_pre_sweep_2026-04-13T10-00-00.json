@@ -1,7 +1,7 @@
 {
   "meta": {
-    "lastSweep": "Apr 13, 2026",
-    "sweepNumber": 6,
+    "lastSweep": "Apr 10, 2026",
+    "sweepNumber": 5,
     "playerCount": 5
   },
   "players": [
@@ -165,16 +165,6 @@
       "confusionRisk": "Mohamed Camara (b. 2000, Al-Sadd) — Malian defensive midfielder in Qatar, different player",
       "rumors": [
         {
-          "date": "Mar 4, 2026",
-          "club": "Guinea National Team",
-          "detail": "Camara selected for Guinea friendly matches vs Togo (Mar 27) and Benin (Mar 31)",
-          "source": "GHANAsoccernet",
-          "sourceUrl": null,
-          "tier": 2,
-          "status": "rumour",
-          "recent": true
-        },
-        {
           "date": "Jan 23, 2026",
           "club": "Orlando Pirates",
           "detail": "Orlando Pirates targeting Camara to reinforce goalkeeping; contract expires June",
@@ -276,26 +266,6 @@
       "altSpellings": [],
       "confusionRisk": null,
       "rumors": [
-        {
-          "date": "Apr 8, 2026",
-          "club": "Kaizer Chiefs",
-          "detail": "5-0 loss to Pirates has damaged credibility; Chiefs move now unlikely for next season",
-          "source": "Goal.com South Africa",
-          "sourceUrl": null,
-          "tier": 2,
-          "status": "rumour",
-          "recent": true
-        },
-        {
-          "date": "Apr 1, 2026",
-          "club": "Kaizer Chiefs",
-          "detail": "Mngqithi linked with possible move to Amakhosi should coaching vacancy arise at Chiefs",
-          "source": "Kick Off",
-          "sourceUrl": null,
-          "tier": 2,
-          "status": "rumour",
-          "recent": true
-        },
         {
           "date": "Dec 9, 2025",
           "club": "Black Lions (Botswana)",

@@ -1,0 +1,69 @@
+{
+  "sweepDate": "Apr 13, 2026",
+  "sweepNumber": 6,
+  "playersSearched": 5,
+  "newIntel": [
+    {
+      "playerId": 3,
+      "playerName": "Mohamed Camara",
+      "rumor": {
+        "date": "Mar 4, 2026",
+        "club": "Guinea National Team",
+        "detail": "Camara selected for Guinea friendly matches vs Togo (Mar 27) and Benin (Mar 31)",
+        "source": "GHANAsoccernet",
+        "sourceUrl": null,
+        "tier": 2,
+        "status": "rumour",
+        "recent": true
+      },
+      "intelUpdates": null,
+      "reasoning": "New intel: International call-up for Guinea friendlies. Date (Mar 4, 2026) is after latest rumor (Jan 27, 2026). Confirms player activity and status post-Kotoko rejection of bids."
+    },
+    {
+      "playerId": 5,
+      "playerName": "Manqoba Mngqithi",
+      "rumor": {
+        "date": "Apr 1, 2026",
+        "club": "Kaizer Chiefs",
+        "detail": "Mngqithi linked with possible move to Amakhosi should coaching vacancy arise at Chiefs",
+        "source": "Kick Off",
+        "sourceUrl": null,
+        "tier": 2,
+        "status": "rumour",
+        "recent": true
+      },
+      "intelUpdates": null,
+      "reasoning": "New intel: Apr 1, 2026 article reporting fresh Chiefs interest contingent on vacancy. Date is after latest rumor (Apr 8, 2026 regarding 5-0 loss impact) but represents distinct reporting from Kick Off. Captures conditional nature of interest."
+    },
+    {
+      "playerId": 5,
+      "playerName": "Manqoba Mngqithi",
+      "rumor": {
+        "date": "Apr 8, 2026",
+        "club": "Kaizer Chiefs",
+        "detail": "5-0 loss to Pirates has damaged credibility; Chiefs move now unlikely for next season",
+        "source": "Goal.com South Africa",
+        "sourceUrl": null,
+        "tier": 2,
+        "status": "rumour",
+        "recent": true
+      },
+      "intelUpdates": null,
+      "reasoning": "New intel: Apr 8, 2026 reporting shows significant shift—Chiefs opportunity has diminished due to poor performance. This represents material change in transfer likelihood and should be tracked as status deterioration."
+    }
+  ],
+  "escalations": [],
+  "noChange": [
+    "Mfundo Obrigado Vilakazi",
+    "Hubert Gyau",
+    "Ayabulela Maxwele"
+  ],
+  "needsReview": [
+    {
+      "playerId": 2,
+      "playerName": "Hubert Gyau",
+      "detail": "Feb 17, 2026 article states agent Mike Makaab confirmed no approach from clubs; Apr 2026 Soccer Laduma states no formal contact from Pirates despite rumours",
+      "reason": "These findings contradict existing rumors (Feb 20 'verge of sealing', Apr 4 'preparing offer'). Sources suggest rumours may be speculative rather than substantive. Existing rumors should potentially be downgraded in reliability but no new intel to add."
+    }
+  ]
+}
