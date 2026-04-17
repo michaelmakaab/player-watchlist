@@ -1,0 +1,47 @@
+{
+  "sweepDate": "Apr 17, 2026",
+  "sweepNumber": 8,
+  "playersSearched": 5,
+  "newIntel": [
+    {
+      "playerId": 2,
+      "playerName": "Hubert Gyau",
+      "rumor": {
+        "date": "Feb 18, 2026",
+        "club": "Asante Kotoko SC",
+        "detail": "Agent Mike Makaab confirms no approach from Kaizer Chiefs or any club",
+        "source": "Goal.com South Africa",
+        "sourceUrl": "https://www.goal.com/en-za/lists/agent-sheds-light-on-kaizer-chiefs-reported-transfer-interest-in-ghanaian-midfielder/blt8438596143d283c6",
+        "tier": 2,
+        "status": "rumour",
+        "recent": true
+      },
+      "intelUpdates": null,
+      "reasoning": "New statement from agent directly contradicting earlier Kaizer Chiefs interest rumor from Jan 26, 2026. Date-gated (Feb 18 after Jan 26 latest). Clarifies status of reported interest."
+    },
+    {
+      "playerId": 2,
+      "playerName": "Hubert Gyau",
+      "rumor": {
+        "date": "Apr 2, 2026",
+        "club": "Orlando Pirates",
+        "detail": "Soccer Laduma: No formal contact or offer from Pirates despite $200k reports",
+        "source": "Soccer Laduma",
+        "sourceUrl": "https://www.soccerladuma.co.za/psl/siyagobhoza/conflicting-signals-in-hubert-gyau-saga-as-orlando-pirates-contact-denied",
+        "tier": 3,
+        "status": "rumour",
+        "recent": true
+      },
+      "intelUpdates": null,
+      "reasoning": "New intelligence contradicting Apr 4, 2026 Pirates rumor. Dated Apr 2 (before Apr 4), sources indicate no formal contact despite earlier reports of $200k offer preparation. Clarifies actual status of Pirates interest."
+    }
+  ],
+  "escalations": [],
+  "noChange": [
+    "Mfundo Obrigado Vilakazi",
+    "Mohamed Camara",
+    "Ayabulela Maxwele",
+    "Manqoba Mngqithi"
+  ],
+  "needsReview": []
+}
