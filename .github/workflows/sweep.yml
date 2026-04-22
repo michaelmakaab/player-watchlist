@@ -2,8 +2,8 @@ name: Weekly Sweep
 
 on:
   schedule:
-    # Every Monday and Friday at 08:00 UTC
-    - cron: "0 8 * * 1,5"
+    # Every Monday and Thursday at 08:00 UTC
+    - cron: "0 8 * * 1,4"
 
   # Manual trigger
   workflow_dispatch:
