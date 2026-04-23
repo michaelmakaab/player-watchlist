@@ -1,7 +1,7 @@
 {
   "meta": {
-    "lastSweep": "Apr 23, 2026",
-    "sweepNumber": 10,
+    "lastSweep": "Apr 20, 2026",
+    "sweepNumber": 9,
     "playerCount": 5
   },
   "players": [
@@ -96,16 +96,6 @@
       "altSpellings": [],
       "confusionRisk": null,
       "rumors": [
-        {
-          "date": "Apr 21, 2026",
-          "club": "Orlando Pirates",
-          "detail": "Pirates holding exploratory talks with Gyau's entourage; offer four-year deal",
-          "source": "Max.com.gh / Yahoo Sports",
-          "sourceUrl": "https://max.com.gh/orlando-pirates-target-kotoko-star",
-          "tier": 2,
-          "status": "advanced",
-          "recent": true
-        },
         {
           "date": "Apr 2, 2026",
           "club": "Orlando Pirates",
@@ -215,16 +205,6 @@
       "confusionRisk": "Mohamed Camara (b. 2000, Al-Sadd) — Malian defensive midfielder in Qatar, different player",
       "rumors": [
         {
-          "date": "Apr 21, 2026",
-          "club": "Asante Kotoko SC",
-          "detail": "Five-match suspension + GHS 20,000 fine for referee assault; major blow to Kotoko",
-          "source": "Pulse Ghana / Africa Top Sports",
-          "sourceUrl": "https://www.pulse.com.gh/story/kotoko-goalkeeper-mohamed-camara-hit-with-5-match-ban-ghs-20000-for-assaulting-referee-2026042116210603353",
-          "tier": 2,
-          "status": "confirmed",
-          "recent": true
-        },
-        {
           "date": "Mar 4, 2026",
           "club": "Guinea National Team",
           "detail": "Camara selected for Guinea friendly matches vs Togo (Mar 27) and Benin (Mar 31)",
@@ -292,26 +272,6 @@
       "confusionRisk": null,
       "rumors": [
         {
-          "date": "Apr 22, 2026",
-          "club": "Kaizer Chiefs / Mamelodi Sundowns / Orlando Pirates",
-          "detail": "Chiefs, Pirates, Sundowns registered interest but no official offers yet submitted",
-          "source": "Soccer Laduma",
-          "sourceUrl": "https://www.soccerladuma.co.za/psl/golden-arrows/manqoba-mngqithi-confirms-downs-chiefs-pirates-interest-in-mafuleka",
-          "tier": 3,
-          "status": "rumour",
-          "recent": true
-        },
-        {
-          "date": "Apr 21, 2026",
-          "club": "Orlando Pirates",
-          "detail": "Pirates in advanced talks with Maxwele and Ndlovu from Golden Arrows",
-          "source": "Soccer Bullet / The South African",
-          "sourceUrl": "https://www.soccerbullet.co.za/orlando-pirates-three-new-signings-on-the-way-full-list-revealed/",
-          "tier": 2,
-          "status": "advanced",
-          "recent": true
-        },
-        {
           "date": "Apr 7, 2026",
           "club": "Golden Arrows",
           "detail": "Scored own goal (36') vs Pirates in 5-0 PSL defeat. Season: 26 apps, 3G 2A.",
@@ -356,16 +316,6 @@
       "altSpellings": [],
       "confusionRisk": null,
       "rumors": [
-        {
-          "date": "Apr 8, 2026",
-          "club": "Kaizer Chiefs",
-          "detail": "5-0 loss to Pirates eliminates Mngqithi's chances at Chiefs; credibility damaged",
-          "source": "Afrik-Foot / KickOff",
-          "sourceUrl": "https://www.afrik-foot.com/en-za/kaizer-chiefs-fans-wont-accept-mngqithi",
-          "tier": 2,
-          "status": "rumour",
-          "recent": true
-        },
         {
           "date": "Apr 19, 2026",
           "club": "Golden Arrows",
