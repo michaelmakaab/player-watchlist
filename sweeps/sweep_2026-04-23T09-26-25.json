@@ -1,0 +1,94 @@
+{
+  "sweepDate": "Apr 23, 2026",
+  "sweepNumber": 10,
+  "playersSearched": 5,
+  "newIntel": [
+    {
+      "playerId": 2,
+      "playerName": "Hubert Gyau",
+      "rumor": {
+        "date": "Apr 21, 2026",
+        "club": "Orlando Pirates",
+        "detail": "Pirates holding exploratory talks with Gyau's entourage; offer four-year deal",
+        "source": "Max.com.gh / Yahoo Sports",
+        "sourceUrl": "https://max.com.gh/orlando-pirates-target-kotoko-star",
+        "tier": 2,
+        "status": "advanced",
+        "recent": true
+      },
+      "intelUpdates": null,
+      "reasoning": "Apr 21, 2026 is after latest rumor (Apr 4, 2026). Escalates from earlier speculative Pirates interest to advanced exploratory talks with concrete four-year deal framework."
+    },
+    {
+      "playerId": 3,
+      "playerName": "Mohamed Camara",
+      "rumor": {
+        "date": "Apr 21, 2026",
+        "club": "Asante Kotoko SC",
+        "detail": "Five-match suspension + GHS 20,000 fine for referee assault; major blow to Kotoko",
+        "source": "Pulse Ghana / Africa Top Sports",
+        "sourceUrl": "https://www.pulse.com.gh/story/kotoko-goalkeeper-mohamed-camara-hit-with-5-match-ban-ghs-20000-for-assaulting-referee-2026042116210603353",
+        "tier": 2,
+        "status": "confirmed",
+        "recent": true
+      },
+      "intelUpdates": null,
+      "reasoning": "Apr 21, 2026 is after latest rumor (Jan 27, 2026). New disciplinary development directly impacts Camara's availability and club stability. Confirmed by GFA action."
+    },
+    {
+      "playerId": 4,
+      "playerName": "Ayabulela Maxwele",
+      "rumor": {
+        "date": "Apr 21, 2026",
+        "club": "Orlando Pirates",
+        "detail": "Pirates in advanced talks with Maxwele and Ndlovu from Golden Arrows",
+        "source": "Soccer Bullet / The South African",
+        "sourceUrl": "https://www.soccerbullet.co.za/orlando-pirates-three-new-signings-on-the-way-full-list-revealed/",
+        "tier": 2,
+        "status": "advanced",
+        "recent": true
+      },
+      "intelUpdates": null,
+      "reasoning": "Apr 21, 2026 is after latest rumor (Apr 7, 2026). Confirms and reinforces Mar 26 advanced talks with fresh reporting from Soccer Bullet on four-year deal framework."
+    },
+    {
+      "playerId": 4,
+      "playerName": "Ayabulela Maxwele",
+      "rumor": {
+        "date": "Apr 22, 2026",
+        "club": "Kaizer Chiefs / Mamelodi Sundowns / Orlando Pirates",
+        "detail": "Chiefs, Pirates, Sundowns registered interest but no official offers yet submitted",
+        "source": "Soccer Laduma",
+        "sourceUrl": "https://www.soccerladuma.co.za/psl/golden-arrows/manqoba-mngqithi-confirms-downs-chiefs-pirates-interest-in-mafuleka",
+        "tier": 3,
+        "status": "rumour",
+        "recent": true
+      },
+      "intelUpdates": null,
+      "reasoning": "Apr 22, 2026 is after latest rumor (Apr 7, 2026). New intel: expands interest beyond Pirates to include Chiefs and Sundowns; confirms exploratory stage without formal bids."
+    },
+    {
+      "playerId": 5,
+      "playerName": "Manqoba Mngqithi",
+      "rumor": {
+        "date": "Apr 8, 2026",
+        "club": "Kaizer Chiefs",
+        "detail": "5-0 loss to Pirates eliminates Mngqithi's chances at Chiefs; credibility damaged",
+        "source": "Afrik-Foot / KickOff",
+        "sourceUrl": "https://www.afrik-foot.com/en-za/kaizer-chiefs-fans-wont-accept-mngqithi",
+        "tier": 2,
+        "status": "rumour",
+        "recent": true
+      },
+      "intelUpdates": {
+        "detail": "Updated from generic credibility loss to specific assessment by ex-Chiefs striker Biyela: loss eliminates coaching candidacy"
+      },
+      "reasoning": "Apr 8, 2026 is same date as existing rumor but provides new substantive detail from Thembinkosi Biyela analysis. Escalates reputational damage from implicit to explicit elimination of Chiefs opportunity."
+    }
+  ],
+  "escalations": [],
+  "noChange": [
+    "Mfundo Obrigado Vilakazi"
+  ],
+  "needsReview": []
+}
