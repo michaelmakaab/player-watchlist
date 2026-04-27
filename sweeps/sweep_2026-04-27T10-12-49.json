@@ -1,0 +1,80 @@
+{
+  "sweepDate": "Apr 27, 2026",
+  "sweepNumber": 11,
+  "playersSearched": 5,
+  "newIntel": [
+    {
+      "playerId": 2,
+      "playerName": "Hubert Gyau",
+      "rumor": {
+        "date": "Apr 23, 2026",
+        "club": "Orlando Pirates",
+        "detail": "Pirates preparing four-year deal offer for Ghanaian midfielder",
+        "source": "Max.com.gh",
+        "sourceUrl": "https://max.com.gh/orlando-pirates-target-kotoko-star",
+        "tier": 2,
+        "status": "rumour",
+        "recent": true
+      },
+      "intelUpdates": null,
+      "reasoning": "Publication date Apr 23, 2026 is after latest rumour date (Apr 21, 2026). Specific offer detail (four-year deal) is genuinely new intel not in existing rumours."
+    },
+    {
+      "playerId": 3,
+      "playerName": "Mohamed Camara",
+      "rumor": {
+        "date": "Apr 22, 2026",
+        "club": "Asante Kotoko SC",
+        "detail": "Season-ending suspension: 5 matches + GHS20k fine for misconduct",
+        "source": "FootyGhana / Ghanamma.com",
+        "sourceUrl": "https://footyghana.com/2026/04/kotoko-goalkeeper-mohamed-camara-banned-five-matches-over-referee-assault",
+        "tier": 1,
+        "status": "official",
+        "recent": true
+      },
+      "intelUpdates": {
+        "status": "unavailable"
+      },
+      "reasoning": "Publication date Apr 22, 2026 is after latest rumour date (Apr 21, 2026). Official GFA suspension is genuinely new development affecting player availability; contract expires June 30, 2026 and ban extends through end of season."
+    },
+    {
+      "playerId": 4,
+      "playerName": "Ayabulela Maxwele",
+      "rumor": {
+        "date": "Apr 21, 2026",
+        "club": "Orlando Pirates",
+        "detail": "Pirates in advanced talks with Maxwele; targeting as Mofokeng/Appollis replacement",
+        "source": "Soccer Bullet / The South African",
+        "sourceUrl": "https://www.soccerbullet.co.za/orlando-pirates-three-new-signings-on-the-way-full-list-revealed/",
+        "tier": 2,
+        "status": "advanced",
+        "recent": true
+      },
+      "intelUpdates": {
+        "status": "advanced"
+      },
+      "reasoning": "Publication date Apr 21, 2026 matches latest rumour date but provides escalation detail: moves from 'advanced talks' to explicit replacement purpose (Mofokeng/Appollis departure context). Represents status upgrade from previous Mar 26 entry."
+    },
+    {
+      "playerId": 5,
+      "playerName": "Manqoba Mngqithi",
+      "rumor": {
+        "date": "Apr 8, 2026",
+        "club": "Kaizer Chiefs",
+        "detail": "5-0 loss to Pirates damages credibility; Chiefs move unlikely next season",
+        "source": "Goal.com South Africa",
+        "sourceUrl": "https://www.goal.com/en-za/lists/manqoba-mngqithi-s-chances-of-coaching-kaizer-chiefs-over-amakhosi-fans-won-t-accept-someone-who-loses-to-orlando-pirates-with-such-an-embarrassing-scoreline/blt830df4e2e7fdd8ad",
+        "tier": 2,
+        "status": "rumour",
+        "recent": true
+      },
+      "intelUpdates": null,
+      "reasoning": "Publication date Apr 8, 2026 is after latest rumour date (Apr 1, 2026). Provides new credibility-damaging intel from Goal.com explicitly ruling out Chiefs move; escalates from 'possible' to 'unlikely' based on reputational damage."
+    }
+  ],
+  "escalations": [],
+  "noChange": [
+    "Mfundo Obrigado Vilakazi"
+  ],
+  "needsReview": []
+}
