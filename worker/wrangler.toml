@@ -1,0 +1,8 @@
+name = "player-watchlist-proxy"
+main = "worker.js"
+compatibility_date = "2025-09-01"
+
+# GH_TOKEN is set as a secret via:
+#   wrangler secret put GH_TOKEN
+#
+# Do NOT add the token here.
