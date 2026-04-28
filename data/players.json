@@ -2,7 +2,7 @@
   "meta": {
     "lastSweep": "Apr 27, 2026",
     "sweepNumber": 11,
-    "playerCount": 5
+    "playerCount": 6
   },
   "players": [
     {
@@ -495,6 +495,44 @@
           "tier": 2,
           "status": "confirmed",
           "recent": true
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Mduduzi Shabalala",
+      "country": "South Africa",
+      "flag": "🇿🇦",
+      "position": "AM",
+      "birthYear": 2004,
+      "currentClub": "Kaizer Chiefs",
+      "status": "active",
+      "sweepTier": "C",
+      "altSpellings": [
+        "Mdu Shabalala",
+        "M. Shabalala"
+      ],
+      "confusionRisk": null,
+      "rumors": [
+        {
+          "date": "Nov 14, 2025",
+          "club": "Multiple European clubs",
+          "detail": "Agent Mike Makaab confirmed interest from several European clubs, noting continued performance at Kaizer Chiefs attracts European attention",
+          "source": "Mike Makaab / Goal.com South Africa",
+          "sourceUrl": null,
+          "tier": 2,
+          "status": "rumour",
+          "recent": false
+        },
+        {
+          "date": "Aug 28, 2025",
+          "club": "European club (unspecified)",
+          "detail": "Reported move to Europe was blocked",
+          "source": "The South African",
+          "sourceUrl": null,
+          "tier": 3,
+          "status": "rumour",
+          "recent": false
         }
       ]
     }
