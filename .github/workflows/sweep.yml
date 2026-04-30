@@ -12,6 +12,11 @@ on:
         description: "Search a specific player (optional)"
         required: false
         type: string
+      model_override:
+        description: "Override Phase 1 model (e.g. claude-haiku-4-5-20251001 to test cheaper model)"
+        required: false
+        type: string
+        default: ""
 
 permissions:
   contents: write
@@ -37,8 +42,12 @@ jobs:
         timeout-minutes: 15
         env:
           ANTHROPIC_API_KEY: ${{ secrets.TT }}
+          SWEEP_MODEL: ${{ github.event.inputs.model_override }}
         run: |
           PLAYER="${{ github.event.inputs.player_name }}"
+          if [ -n "$SWEEP_MODEL" ]; then
+            echo "Phase 1 model override: $SWEEP_MODEL"
+          fi
           if [ -n "$PLAYER" ]; then
             echo "Running sweep for player: $PLAYER"
             node scripts/sweep.mjs --verbose --player "$PLAYER"
