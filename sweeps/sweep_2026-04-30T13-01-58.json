@@ -1,0 +1,51 @@
+{
+  "sweepDate": "Apr 30, 2026",
+  "sweepNumber": 12,
+  "playersSearched": 6,
+  "newIntel": [
+    {
+      "playerId": 4,
+      "playerName": "Ayabulela Maxwele",
+      "rumor": {
+        "date": "Apr 30, 2026",
+        "club": "Orlando Pirates",
+        "detail": "Deal sealed: Maxwele & Ndlovu transferring to Pirates from Golden Arrows",
+        "source": "KickOff",
+        "sourceUrl": "https://www.kickoff.com/psl/orlando-pirates/arrows-player-on-pirates-radar",
+        "tier": 2,
+        "status": "confirmed",
+        "recent": true
+      },
+      "intelUpdates": {
+        "status": "confirmed",
+        "detail": "Transfer deal sealed between Pirates and Golden Arrows; move to Gauteng confirmed"
+      },
+      "reasoning": "New intel published Apr 30, 2026 (today). Latest rumor date is Mar 26, 2026. This represents escalation from 'advanced talks' to 'confirmed deal' with explicit confirmation from sources close to both clubs."
+    }
+  ],
+  "escalations": [
+    {
+      "playerId": 4,
+      "playerName": "Ayabulela Maxwele",
+      "field": "status",
+      "oldValue": "advanced",
+      "newValue": "confirmed",
+      "source": "KickOff (Apr 30, 2026)"
+    }
+  ],
+  "noChange": [
+    "Mfundo Vilakazi",
+    "Hubert Gyau",
+    "Mohamed Camara",
+    "Manqoba Mngqithi",
+    "Mduduzi Shabalala"
+  ],
+  "needsReview": [
+    {
+      "playerId": 1,
+      "playerName": "Mfundo Vilakazi",
+      "detail": "Cryptic social media post suggesting frustration with game time at Kaizer Chiefs (Apr 29, 2026)",
+      "reason": "Not a transfer rumor; relates to squad happiness/internal club dynamics. Does not meet transfer watchlist criteria."
+    }
+  ]
+}
