@@ -171,7 +171,13 @@ START SEARCHING NOW. Use web_search for the first player immediately. Do not wri
     const stream = client.messages.stream({
       model: MODEL,
       max_tokens: 4000,
-      system: "You are a football transfer research agent. Search for transfer news and report findings concisely. Do NOT produce JSON — just describe what you found for each player.",
+      system: [
+        {
+          type: "text",
+          text: "You are a football transfer research agent. Search for transfer news and report findings concisely. Do NOT produce JSON — just describe what you found for each player.",
+          cache_control: { type: "ephemeral" }
+        }
+      ],
       tools: [
         {
           type: "web_search_20250305",
@@ -179,7 +185,12 @@ START SEARCHING NOW. Use web_search for the first player immediately. Do not wri
           max_uses: maxSearches
         }
       ],
-      messages: [{ role: "user", content: searchPrompt }]
+      messages: [{
+        role: "user",
+        content: [
+          { type: "text", text: searchPrompt, cache_control: { type: "ephemeral" } }
+        ]
+      }]
     });
 
     let searchCount = 0;
@@ -295,7 +306,12 @@ Return ONLY the JSON — nothing else.`;
     const response = await client.messages.create({
       model: MODEL_PHASE2,
       max_tokens: 4000,
-      messages: [{ role: "user", content: jsonPrompt }]
+      messages: [{
+        role: "user",
+        content: [
+          { type: "text", text: jsonPrompt, cache_control: { type: "ephemeral" } }
+        ]
+      }]
     });
 
     return response.content
