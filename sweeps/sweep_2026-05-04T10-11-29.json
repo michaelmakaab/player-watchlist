@@ -1,0 +1,86 @@
+{
+  "sweepDate": "May 4, 2026",
+  "sweepNumber": 13,
+  "playersSearched": 6,
+  "newIntel": [
+    {
+      "playerId": 3,
+      "playerName": "Mohamed Camara",
+      "rumor": {
+        "date": "Apr 22, 2026",
+        "club": "Asante Kotoko SC",
+        "detail": "Season-ending 5-match suspension + GHS20k fine for misconduct",
+        "source": "FootyGhana",
+        "sourceUrl": "https://footyghana.com/2026/04/kotoko-goalkeeper-mohamed-camara-banned-five-matches-over-referee-assault/",
+        "tier": 1,
+        "status": "confirmed",
+        "recent": true
+      },
+      "intelUpdates": {
+        "availabilityStatus": "suspended",
+        "seasonStatus": "season-ending"
+      },
+      "reasoning": "New development not in existing rumors. Apr 22 is after latest rumor date (Apr 22, 2026). Suspension impacts contract timeline (expires June 30, 2026) and transfer window planning. Material change to player availability."
+    },
+    {
+      "playerId": 4,
+      "playerName": "Ayabulela Maxwele",
+      "rumor": {
+        "date": "Apr 30, 2026",
+        "club": "Orlando Pirates",
+        "detail": "Deal sealed: Maxwele transferring to Pirates from Golden Arrows",
+        "source": "KickOff",
+        "sourceUrl": "https://www.kickoff.com/psl/orlando-pirates/arrows-player-on-pirates-radar",
+        "tier": 2,
+        "status": "confirmed",
+        "recent": true
+      },
+      "intelUpdates": {
+        "transferStatus": "confirmed",
+        "newClub": "Orlando Pirates",
+        "dealPhase": "sealed"
+      },
+      "reasoning": "Status upgrade from 'advanced talks' (Apr 30 latest) to 'deal sealed/confirmed'. Apr 30 publication confirms completion of months-long negotiation. Represents endpoint of transfer process already tracked."
+    },
+    {
+      "playerId": 6,
+      "playerName": "Mduduzi Shabalala",
+      "rumor": {
+        "date": "Nov 14, 2025",
+        "club": "Multiple European clubs",
+        "detail": "Agent Mike Makaab confirms European interest in Shabalala alongside Vilakazi",
+        "source": "Goal.com South Africa",
+        "sourceUrl": "https://www.goal.com/en-za/lists/top-agent-confirms-transfer-interest-from-several-european-clubs-in-kaizer-chiefs-duo/blt3cd6f89ad551d6f4",
+        "tier": 2,
+        "status": "rumour",
+        "recent": false
+      },
+      "intelUpdates": null,
+      "reasoning": "Article is from Nov 14, 2025—predates existing Nov 14, 2025 rumor in the list. Research confirms same source and content already captured. No new intel beyond existing record."
+    }
+  ],
+  "escalations": [
+    {
+      "playerId": 4,
+      "playerName": "Ayabulela Maxwele",
+      "field": "status",
+      "oldValue": "advanced",
+      "newValue": "confirmed",
+      "source": "KickOff (Apr 30, 2026)"
+    },
+    {
+      "playerId": 3,
+      "playerName": "Mohamed Camara",
+      "field": "availabilityStatus",
+      "oldValue": "active",
+      "newValue": "suspended",
+      "source": "FootyGhana / GhaNamma (Apr 22, 2026)"
+    }
+  ],
+  "noChange": [
+    "Mfundo Vilakazi",
+    "Hubert Gyau",
+    "Manqoba Mngqithi"
+  ],
+  "needsReview": []
+}
