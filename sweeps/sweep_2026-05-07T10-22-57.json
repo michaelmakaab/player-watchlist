@@ -1,0 +1,56 @@
+{
+  "sweepDate": "May 7, 2026",
+  "sweepNumber": 14,
+  "playersSearched": 6,
+  "newIntel": [
+    {
+      "playerId": 3,
+      "playerName": "Mohamed Camara",
+      "rumor": {
+        "date": "Apr 22, 2026",
+        "club": "Asante Kotoko SC",
+        "detail": "Season ended: 5-match suspension + GHS20k fine for misconduct",
+        "source": "FootyGhana / Ghanamma.com",
+        "sourceUrl": null,
+        "tier": 1,
+        "status": "confirmed",
+        "recent": true
+      },
+      "intelUpdates": {
+        "transferProspects": "severely_damaged",
+        "note": "Suspension directly impacts transfer value before June 2026 contract expiry"
+      },
+      "reasoning": "Latest rumor on file is Apr 22, 2026 (suspension confirmed). Research findings repeat this same date/event, confirming no NEW intel beyond existing record. Keeping existing Apr 22 entry; no delta addition needed."
+    }
+  ],
+  "escalations": [
+    {
+      "playerId": 4,
+      "playerName": "Ayabulela Maxwele",
+      "field": "status",
+      "oldValue": "active",
+      "newValue": "confirmed",
+      "source": "KickOff (Apr 30, 2026)"
+    }
+  ],
+  "noChange": [
+    "Mfundo Vilakazi",
+    "Hubert Gyau",
+    "Manqoba Mngqithi",
+    "Mduduzi Shabalala"
+  ],
+  "needsReview": [
+    {
+      "playerId": 2,
+      "playerName": "Hubert Gyau",
+      "detail": "Danish Superliga clubs FC Midtjylland and Randers FC tracking Gyau (March 15, 2026 report)",
+      "reason": "Research finding references Mar 15, 2026 date but existing rumors already include Mar 15, 2026 entry with identical detail. No new intel beyond what is already recorded."
+    },
+    {
+      "playerId": 5,
+      "playerName": "Manqoba Mngqithi",
+      "detail": "Contact made with Chiefs; Golden Arrows chair blocking move (March 30, 2026)",
+      "reason": "Research findings cite March 29-30, 2026 discussions. Existing rumor dated Mar 29, 2026 already documents early discussions with Golden Arrows opposition. No materially new development beyond what is recorded."
+    }
+  ]
+}
