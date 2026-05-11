@@ -1,0 +1,40 @@
+{
+  "sweepDate": "May 11, 2026",
+  "sweepNumber": 16,
+  "playersSearched": 6,
+  "newIntel": [
+    {
+      "playerId": 6,
+      "playerName": "Mduduzi Shabalala",
+      "rumor": {
+        "date": "May 7, 2026",
+        "club": "Kaizer Chiefs",
+        "detail": "Right humerus fracture confirmed via scans; surgery scheduled. Out 5-6 weeks.",
+        "source": "Kaizer Chiefs Official / Soccer Laduma",
+        "sourceUrl": "https://www.kaizerchiefs.com/news/shabalala-undergo-surgery-after-tackle",
+        "tier": 1,
+        "status": "confirmed",
+        "recent": true
+      },
+      "intelUpdates": {
+        "status": "injury"
+      },
+      "reasoning": "New medical development dated May 7, 2026 (post-latest existing rumor of May 7). Confirms serious injury with timeline details not previously recorded. T1 source from official club statement."
+    }
+  ],
+  "escalations": [],
+  "noChange": [
+    "Mfundo Vilakazi",
+    "Hubert Gyau",
+    "Mohamed Camara",
+    "Manqoba Mngqithi"
+  ],
+  "needsReview": [
+    {
+      "playerId": 4,
+      "playerName": "Ayabulela Maxwele",
+      "detail": "Research indicates deal sealed 'approximately 2 weeks ago' from May 11 sweep date (roughly late April/early May 2026), but exact publication date of confirmation article not provided",
+      "reason": "Source URL references March 26 advanced talks article, but new confirmation lacks precise date. Escalation status updated to 'official' based on 'deal sealed' language, but date-gating cannot be fully verified without exact publication timestamp of confirmation source."
+    }
+  ]
+}
