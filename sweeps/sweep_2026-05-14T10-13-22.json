@@ -1,0 +1,69 @@
+{
+  "sweepDate": "May 14, 2026",
+  "sweepNumber": 17,
+  "playersSearched": 6,
+  "newIntel": [
+    {
+      "playerId": 1,
+      "playerName": "Mfundo Obrigado Vilakazi",
+      "rumor": {
+        "date": "May 11, 2026",
+        "club": "Kaizer Chiefs",
+        "detail": "Scored penalty vs Sekhukhune United; continues regular features for Chiefs.",
+        "source": "Soccer Laduma",
+        "sourceUrl": null,
+        "tier": 2,
+        "status": "rumour",
+        "recent": true
+      },
+      "intelUpdates": null,
+      "reasoning": "New match performance detail (penalty vs Sekhukhune, May 11) post-dates latest rumor (May 8). Confirms active status and scoring form."
+    },
+    {
+      "playerId": 4,
+      "playerName": "Ayabulela Maxwele",
+      "rumor": {
+        "date": "May 14, 2026",
+        "club": "Kaizer Chiefs",
+        "detail": "Kaizer Chiefs turned attention to Golden Arrows midfielder Maxwele.",
+        "source": "KickOff / Soccer Laduma",
+        "sourceUrl": null,
+        "tier": 2,
+        "status": "rumour",
+        "recent": true
+      },
+      "intelUpdates": null,
+      "reasoning": "New intel (May 14) shows Kaizer Chiefs renewed interest. Latest existing rumor is Apr 30 (deal to Pirates). New competing bid represents material development warranting inclusion."
+    },
+    {
+      "playerId": 5,
+      "playerName": "Manqoba Mngqithi",
+      "rumor": {
+        "date": "May 9, 2026",
+        "club": "Kaizer Chiefs",
+        "detail": "Agent Makaab: if genuine Chiefs interest, approach must come from club directly.",
+        "source": "Briefly / Afrik-foot",
+        "sourceUrl": null,
+        "tier": 2,
+        "status": "rumour",
+        "recent": true
+      },
+      "intelUpdates": null,
+      "reasoning": "New agent statement (May 9) post-dates latest rumor (May 5). Makaab's comment indicates continued Chiefs interest and readiness to engage, escalating from passive speculation to potential active pursuit."
+    }
+  ],
+  "escalations": [],
+  "noChange": [
+    "Hubert Gyau",
+    "Mohamed Camara",
+    "Mduduzi Shabalala"
+  ],
+  "needsReview": [
+    {
+      "playerId": 3,
+      "playerName": "Mohamed Camara",
+      "detail": "Disciplinary suspension (5 matches, GHS 20k fine) confirmed by GFA for March 8 incident; season effectively ended.",
+      "reason": "Existing rumors already cover Apr 21-22 suspension announcement. No new transfer intel; disciplinary status change does not constitute transfer rumor material. Noted for context but excluded from newIntel as per watchlist scope."
+    }
+  ]
+}
