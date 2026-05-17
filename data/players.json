@@ -2,7 +2,7 @@
   "meta": {
     "lastSweep": "May 14, 2026",
     "sweepNumber": 17,
-    "playerCount": 6
+    "playerCount": 7
   },
   "players": [
     {
@@ -653,6 +653,64 @@
           "tier": 3,
           "status": "rumour",
           "recent": false
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Isaac Cissé",
+      "country": "Ivory Coast",
+      "flag": "🇨🇮",
+      "position": "DM",
+      "birthYear": 2006,
+      "currentClub": "Lamontville Golden Arrows FC",
+      "status": "active",
+      "sweepTier": "C",
+      "altSpellings": [
+        "Isaac Cisse",
+        "Isaac Cisé"
+      ],
+      "confusionRisk": "Isaac Cissé (b.1994, Forward) - older Ivorian player with same name but distinguishable by birth year, position, and club",
+      "rumors": [
+        {
+          "date": "Apr 22, 2026",
+          "club": "Al Ahly SC",
+          "detail": "Egyptian heavyweights Al Ahly SC identified 19-year-old Ivorian midfielder Isaac Cissé as potential transfer target for squad restructuring ahead of new season. Discussions understood to be at early stage as club assesses options.",
+          "source": "Africa Soccer",
+          "sourceUrl": null,
+          "tier": 3,
+          "status": "rumour",
+          "recent": true
+        },
+        {
+          "date": "Apr 9, 2026",
+          "club": "Kaizer Chiefs",
+          "detail": "Al Ahly, Kaizer Chiefs, Al Hilal Sudan and Club Brugge all monitoring the industrious midfielder ahead of upcoming transfer window. Golden Arrows have rejected two official offers for the teenage sensation.",
+          "source": "The South African, iDiski Times",
+          "sourceUrl": null,
+          "tier": 3,
+          "status": "rumour",
+          "recent": true
+        },
+        {
+          "date": "Apr 9, 2026",
+          "club": "Al Hilal Sudan",
+          "detail": "Sudanese club monitoring midfielder ahead of upcoming transfer window as part of multi-club interest. Golden Arrows have rejected two official offers.",
+          "source": "The South African, iDiski Times",
+          "sourceUrl": null,
+          "tier": 3,
+          "status": "rumour",
+          "recent": true
+        },
+        {
+          "date": "Apr 9, 2026",
+          "club": "Club Brugge",
+          "detail": "Belgian Pro League giants Club Brugge monitoring the midfielder ahead of upcoming transfer window alongside other major clubs. Golden Arrows have rejected two official offers.",
+          "source": "The South African, iDiski Times",
+          "sourceUrl": null,
+          "tier": 3,
+          "status": "rumour",
+          "recent": true
         }
       ]
     }
