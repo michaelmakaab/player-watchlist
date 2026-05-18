@@ -1,0 +1,68 @@
+{
+  "sweepDate": "May 18, 2026",
+  "sweepNumber": 18,
+  "playersSearched": 7,
+  "newIntel": [
+    {
+      "playerId": 4,
+      "playerName": "Ayabulela Maxwele",
+      "rumor": {
+        "date": "May 15, 2026",
+        "club": "Orlando Pirates",
+        "detail": "Agent Makaab confirms substantial interest; process must follow correct channels",
+        "source": "Goal.com South Africa",
+        "sourceUrl": "https://www.goal.com/en-za/lists/mike-makaab-confirms-interest-in-golden-arrows-star-amid-orlando-pirates-transfer-links-we-have-to-take-it-one-step-at-a-time/blta97d59111bb9ecab",
+        "tier": 2,
+        "status": "advanced",
+        "recent": true
+      },
+      "intelUpdates": {
+        "status": "advanced"
+      },
+      "reasoning": "May 15, 2026 agent confirmation is NEW intel post-dating Apr 30 'deal sealed' rumor. Agent statement adds credibility and signals advanced stage negotiations. More recent than previous entries."
+    },
+    {
+      "playerId": 5,
+      "playerName": "Manqoba Mngqithi",
+      "rumor": {
+        "date": "May 9, 2026",
+        "club": "Kaizer Chiefs",
+        "detail": "Agent: if genuine Chiefs interest, approach must come from club directly",
+        "source": "Briefly / Afrik-foot",
+        "sourceUrl": null,
+        "tier": 2,
+        "status": "rumour",
+        "recent": true
+      },
+      "intelUpdates": null,
+      "reasoning": "Duplicate of existing May 9, 2026 entry already in database. No new intel. EXCLUDED from final output."
+    }
+  ],
+  "escalations": [],
+  "noChange": [
+    "Hubert Gyau",
+    "Mohamed Camara",
+    "Mduduzi Shabalala",
+    "Isaac Cissé"
+  ],
+  "needsReview": [
+    {
+      "playerId": 1,
+      "playerName": "Mfundo Vilakazi",
+      "detail": "Cryptic repost on social media regarding limited opportunities",
+      "reason": "Vague publication date ('May 2026') in research findings; exact article date unavailable. Exact date precision uncertain."
+    },
+    {
+      "playerId": 4,
+      "playerName": "Ayabulela Maxwele",
+      "detail": "Report indicates two clubs have sealed deal for three players moving to Gauteng",
+      "reason": "Research mentions deal imminent but earlier Apr 30 entry already states 'deal sealed.' Unclear if this May 15 is new development or confirmation of Apr 30 status."
+    },
+    {
+      "playerId": 1,
+      "playerName": "Mfundo Vilakazi",
+      "detail": "Cryptic social media repost hints at frustration over limited game time at Chiefs",
+      "reason": "Auto-rejected: Date format invalid: \"May 2026\" — expected \"Mon DD, YYYY\"; Name mismatch: API returned \"Mfundo Vilakazi\" but ID 1 is \"Mfundo Obrigado Vilakazi\""
+    }
+  ]
+}
