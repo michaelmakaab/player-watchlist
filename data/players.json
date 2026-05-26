@@ -1,7 +1,7 @@
 {
   "meta": {
     "lastSweep": "May 18, 2026",
-    "sweepNumber": 18,
+    "sweepNumber": 19,
     "playerCount": 7
   },
   "players": [
@@ -126,6 +126,16 @@
       "altSpellings": [],
       "confusionRisk": null,
       "rumors": [
+        {
+          "date": "May 9, 2026",
+          "club": "Orlando Pirates / Kaizer Chiefs",
+          "detail": "Both Pirates and Chiefs racing for signature; agency Prosport confirms interest growing.",
+          "source": "Goal.com South Africa",
+          "sourceUrl": "https://www.goal.com/en-za/lists/mike-makaab-confirms-interest-in-golden-arrows-star-amid-orlando-pirates-transfer-links-we-have-to-take-it-one-step-at-a-time/blta97d59111bb9ecab",
+          "tier": 2,
+          "status": "rumour",
+          "recent": true
+        },
         {
           "date": "Apr 23, 2026",
           "club": "Orlando Pirates",
@@ -255,6 +265,16 @@
       "confusionRisk": "Mohamed Camara (b. 2000, Al-Sadd) — Malian defensive midfielder in Qatar, different player",
       "rumors": [
         {
+          "date": "Apr 15, 2026",
+          "club": "Sekhukhune United",
+          "detail": "PRE-CONTRACT AGREEMENT signed with Sekhukhune — Pirates miss out. Kotoko bracing for exit.",
+          "source": "Africa Top Sports",
+          "sourceUrl": "https://en.africatopsports.com/2026/04/15/gpl-kotoko-set-to-lose-camara-as-sekhukhune-united-secure-pre-contract-deal/",
+          "tier": 2,
+          "status": "advanced",
+          "recent": true
+        },
+        {
           "date": "Apr 22, 2026",
           "club": "Asante Kotoko SC",
           "detail": "Season ended: 5-match suspension + GHS20k fine for misconduct",
@@ -369,6 +389,16 @@
           "sourceUrl": null,
           "tier": 2,
           "status": "rumour",
+          "recent": true
+        },
+        {
+          "date": "May 8, 2026",
+          "club": "Orlando Pirates",
+          "detail": "Pirates leading race; healthy Arrows-Pirates window relationship makes Bucs favourites.",
+          "source": "Vodacom Soccer / Soccer Bullet",
+          "sourceUrl": "https://vodacomsoccer.com/news/golden-arrows-star-attracting-suitors-ahead-of-new-season-transfers",
+          "tier": 2,
+          "status": "advanced",
           "recent": true
         },
         {
