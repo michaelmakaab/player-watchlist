@@ -1,7 +1,7 @@
 {
   "meta": {
-    "lastSweep": "May 18, 2026",
-    "sweepNumber": 19,
+    "lastSweep": "May 27, 2026",
+    "sweepNumber": 20,
     "playerCount": 7
   },
   "players": [
@@ -21,6 +21,26 @@
       ],
       "confusionRisk": null,
       "rumors": [
+        {
+          "date": "May 22, 2026",
+          "club": "Kaizer Chiefs",
+          "detail": "Scored penalty in 2-0 win vs Sekhukhune (3rd league goal). Dedicated celebration to injured Shabalala (leg-lift + #7 jersey).",
+          "source": "Soccer Laduma",
+          "sourceUrl": "https://www.soccerladuma.co.za/psl/fan-park/mfundo-vilakazi-dedicates-goal-to-injured-teammate-mduduzi-shabalala",
+          "tier": 1,
+          "status": "confirmed",
+          "recent": true
+        },
+        {
+          "date": "May 23, 2026",
+          "club": "Kaizer Chiefs",
+          "detail": "MISSED Soweto Derby (3-0 defeat to Pirates) due to injury vs Stellenbosch FC. Coach Kaze confirmed.",
+          "source": "Kick Off",
+          "sourceUrl": "https://www.kickoff.com/psl/kaizer-chiefs/cedric-kaze-explains-absence-of-shabalala-and-vilakazi-from-soweto-derby",
+          "tier": 2,
+          "status": "confirmed",
+          "recent": true
+        },
         {
           "date": "May 11, 2026",
           "club": "Kaizer Chiefs",
@@ -372,6 +392,16 @@
       "confusionRisk": null,
       "rumors": [
         {
+          "date": "May 25, 2026",
+          "club": "Orlando Pirates",
+          "detail": "Advanced talks confirmed for Maxwele + Ndlovu joining Pirates. Chiefs also racing but Bucs in pole.",
+          "source": "iDiski Times / Soccer Bullet",
+          "sourceUrl": "https://www.idiskitimes.co.za/transfer-centre/chiefs-pirates-circle-arrows-star/",
+          "tier": 2,
+          "status": "advanced",
+          "recent": true
+        },
+        {
           "date": "May 15, 2026",
           "club": "Orlando Pirates",
           "detail": "Agent Makaab confirms substantial interest; process must follow correct channels",
@@ -486,6 +516,16 @@
       "altSpellings": [],
       "confusionRisk": null,
       "rumors": [
+        {
+          "date": "May 25, 2026",
+          "club": "Kaizer Chiefs",
+          "detail": "FRONT-RUNNER for Chiefs job per latest reports. Plan to add as senior figure. Arrows chairlady Madlala holding things back.",
+          "source": "The South African / Goal.com SA",
+          "sourceUrl": "https://www.thesouthafrican.com/sport/soccer/psl-south-africa/latest-reports-next-kaizer-chiefs-head-coach/",
+          "tier": 2,
+          "status": "advanced",
+          "recent": true
+        },
         {
           "date": "May 9, 2026",
           "club": "Kaizer Chiefs",
@@ -644,6 +684,16 @@
       ],
       "confusionRisk": null,
       "rumors": [
+        {
+          "date": "May 16, 2026",
+          "club": "Kaizer Chiefs",
+          "detail": "Surgery successful. 5-6 weeks recovery confirmed — ruled out remainder of season. Teammates visiting regularly.",
+          "source": "FARPost / Kaizer Chiefs Official",
+          "sourceUrl": "https://farpost.co.za/2026/05/07/chiefs-issue-injury-update-on-mduduzi-shabalala/",
+          "tier": 1,
+          "status": "confirmed",
+          "recent": true
+        },
         {
           "date": "May 7, 2026",
           "club": "Kaizer Chiefs",
