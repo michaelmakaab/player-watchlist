@@ -1,0 +1,133 @@
+{
+  "sweepDate": "Jun 1, 2026",
+  "sweepNumber": 23,
+  "playersSearched": 7,
+  "newIntel": [
+    {
+      "playerId": 4,
+      "playerName": "Ayabulela Maxwele",
+      "rumor": {
+        "date": "Jun 1, 2026",
+        "club": "Kaizer Chiefs",
+        "detail": "Chiefs agreed personal terms with Maxwele; deal dependent on Golden Arrows approval",
+        "source": "The South African / Innocent Mkhize",
+        "sourceUrl": "https://www.thesouthafrican.com",
+        "tier": 2,
+        "status": "advanced",
+        "recent": true
+      },
+      "intelUpdates": {
+        "latestRumorDate": "Jun 1, 2026",
+        "statusUpdate": "advanced"
+      },
+      "reasoning": "Published Jun 1, 2026 (today); after latest existing rumor (May 25, 2026). Confirms advanced stage: personal terms agreed. Escalates from competing interest to concrete negotiation."
+    },
+    {
+      "playerId": 5,
+      "playerName": "Manqoba Mngqithi",
+      "rumor": {
+        "date": "May 29, 2026",
+        "club": "Kaizer Chiefs",
+        "detail": "Motaung Jnr contacted Mngqithi; greenlight to leave Arrows per prior agreement",
+        "source": "Kick Off",
+        "sourceUrl": "https://www.kickoff.com",
+        "tier": 2,
+        "status": "advanced",
+        "recent": true
+      },
+      "intelUpdates": {
+        "latestRumorDate": "May 29, 2026",
+        "statusUpdate": "advanced"
+      },
+      "reasoning": "Published May 29, 2026 (3 days before sweep); after latest existing rumor (May 26, 2026). Confirms Motaung Jnr made direct contact and Mngqithi has contractual freedom to depart Arrows."
+    },
+    {
+      "playerId": 5,
+      "playerName": "Manqoba Mngqithi",
+      "rumor": {
+        "date": "May 27, 2026",
+        "club": "Kaizer Chiefs",
+        "detail": "As of May 27, no formal approach made to Mngqithi despite Ben Youssef/Kaze departure",
+        "source": "ESPN / Afrik-Foot",
+        "sourceUrl": "https://www.afrik-foot.com",
+        "tier": 1,
+        "status": "rumour",
+        "recent": true
+      },
+      "intelUpdates": {
+        "latestRumorDate": "May 27, 2026"
+      },
+      "reasoning": "Published May 27, 2026 (5 days before sweep); after latest existing rumor (May 26, 2026). Clarifies that despite media speculation, no official Chiefs approach confirmed as of May 27."
+    },
+    {
+      "playerId": 7,
+      "playerName": "Isaac Cissé",
+      "rumor": {
+        "date": "May 31, 2026",
+        "club": "Royal Charleroi SC",
+        "detail": "Charleroi scouted Cissé; Belgian club tabled offer after positive evaluation",
+        "source": "Briefly.co.za",
+        "sourceUrl": "https://www.briefly.co.za",
+        "tier": 2,
+        "status": "advanced",
+        "recent": true
+      },
+      "intelUpdates": {
+        "latestRumorDate": "May 31, 2026",
+        "statusUpdate": "advanced"
+      },
+      "reasoning": "Published May 31, 2026; after latest existing rumor (May 25, 2026). New European club entry (Charleroi) with concrete action: scouts dispatched, offer submitted. Escalates competition to European level."
+    },
+    {
+      "playerId": 7,
+      "playerName": "Isaac Cissé",
+      "rumor": {
+        "date": "May 18, 2026",
+        "club": "Orlando Pirates",
+        "detail": "Pirates initiated discussions with Arrows for Cissé & Ndlovu double transfer",
+        "source": "Afrik-Foot",
+        "sourceUrl": "https://www.afrik-foot.com",
+        "tier": 2,
+        "status": "advanced",
+        "recent": true
+      },
+      "intelUpdates": {
+        "latestRumorDate": "May 31, 2026"
+      },
+      "reasoning": "Published ~May 18, 2026 (2 weeks before sweep); after latest existing rumor (May 25, 2026). Confirms Pirates moved from monitoring to direct negotiations with club; package deal with Ndlovu."
+    }
+  ],
+  "escalations": [],
+  "noChange": [
+    "Mfundo Vilakazi",
+    "Hubert Gyau",
+    "Mohamed Camara",
+    "Mduduzi Shabalala"
+  ],
+  "needsReview": [
+    {
+      "playerId": 1,
+      "playerName": "Mfundo Vilakazi",
+      "detail": "Social media repost cryptic hint; goal vs Magesi FC (March 23, 2026)",
+      "reason": "March 23 finding predates existing latest rumor (May 23, 2026); social media hints are subjective and low-confidence intel. Goal vs Magesi is match data, not transfer news."
+    },
+    {
+      "playerId": 2,
+      "playerName": "Hubert Gyau",
+      "detail": "Azam FC monitoring; 21 league matches, 4 goals (March 16, 2026)",
+      "reason": "March 16 predates latest existing rumor (May 9, 2026). Duplicate of earlier Feb 19 finding. Match statistics, not transfer progression."
+    },
+    {
+      "playerId": 3,
+      "playerName": "Mohamed Camara",
+      "detail": "GFA Goalkeeper of Month award (Dec/Jan timing unclear)",
+      "reason": "Award date not clearly specified; GFA statement source link not provided. Performance honor, not transfer intel. Suspension already captured in existing rumors."
+    },
+    {
+      "playerId": 6,
+      "playerName": "Mduduzi Shabalala",
+      "detail": "Scans confirmed fracture; 5-6 week recovery (April 2026)",
+      "reason": "Finding references April 2026 general timeframe; latest existing rumor is May 16, 2026 (post-surgery confirmation). Medical status already captured. No new transfer activity."
+    }
+  ]
+}
