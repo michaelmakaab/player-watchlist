@@ -1,7 +1,7 @@
 {
   "meta": {
     "lastSweep": "Jun 1, 2026",
-    "sweepNumber": 23,
+    "sweepNumber": 22,
     "playerCount": 7
   },
   "players": [
@@ -392,16 +392,6 @@
       "confusionRisk": null,
       "rumors": [
         {
-          "date": "Jun 1, 2026",
-          "club": "Kaizer Chiefs",
-          "detail": "Chiefs agreed personal terms with Maxwele; deal dependent on Golden Arrows approval",
-          "source": "The South African / Innocent Mkhize",
-          "sourceUrl": "https://www.thesouthafrican.com",
-          "tier": 2,
-          "status": "advanced",
-          "recent": true
-        },
-        {
           "date": "May 25, 2026",
           "club": "Orlando Pirates",
           "detail": "Advanced talks confirmed for Maxwele + Ndlovu joining Pirates. Chiefs also racing but Bucs in pole.",
@@ -526,26 +516,6 @@
       "altSpellings": [],
       "confusionRisk": null,
       "rumors": [
-        {
-          "date": "May 27, 2026",
-          "club": "Kaizer Chiefs",
-          "detail": "As of May 27, no formal approach made to Mngqithi despite Ben Youssef/Kaze departure",
-          "source": "ESPN / Afrik-Foot",
-          "sourceUrl": "https://www.afrik-foot.com",
-          "tier": 1,
-          "status": "rumour",
-          "recent": true
-        },
-        {
-          "date": "May 29, 2026",
-          "club": "Kaizer Chiefs",
-          "detail": "Motaung Jnr contacted Mngqithi; greenlight to leave Arrows per prior agreement",
-          "source": "Kick Off",
-          "sourceUrl": "https://www.kickoff.com",
-          "tier": 2,
-          "status": "advanced",
-          "recent": true
-        },
         {
           "date": "May 26, 2026",
           "club": "Kaizer Chiefs",
@@ -802,26 +772,6 @@
       ],
       "confusionRisk": "Isaac Cissé (b.1994, Forward) - older Ivorian player with same name but distinguishable by birth year, position, and club",
       "rumors": [
-        {
-          "date": "May 18, 2026",
-          "club": "Orlando Pirates",
-          "detail": "Pirates initiated discussions with Arrows for Cissé & Ndlovu double transfer",
-          "source": "Afrik-Foot",
-          "sourceUrl": "https://www.afrik-foot.com",
-          "tier": 2,
-          "status": "advanced",
-          "recent": true
-        },
-        {
-          "date": "May 31, 2026",
-          "club": "Royal Charleroi SC",
-          "detail": "Charleroi scouted Cissé; Belgian club tabled offer after positive evaluation",
-          "source": "Briefly.co.za",
-          "sourceUrl": "https://www.briefly.co.za",
-          "tier": 2,
-          "status": "advanced",
-          "recent": true
-        },
         {
           "date": "May 25, 2026",
           "club": "Orlando Pirates",
