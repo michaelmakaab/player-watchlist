@@ -1,0 +1,57 @@
+{
+  "sweepDate": "Jun 4, 2026",
+  "sweepNumber": 24,
+  "playersSearched": 7,
+  "newIntel": [
+    {
+      "playerId": 4,
+      "playerName": "Ayabulela Maxwele",
+      "rumor": {
+        "date": "Jun 1, 2026",
+        "club": "Kaizer Chiefs",
+        "detail": "Chiefs agreed personal terms with Maxwele; deal dependent on Golden Arrows approval",
+        "source": "The South African",
+        "sourceUrl": "https://www.thesouthafrican.com/sport/soccer/psl-south-africa/new-report-on-psl-midfielder-to-kaizer-chiefs/",
+        "tier": 2,
+        "status": "advanced",
+        "recent": true
+      },
+      "intelUpdates": {
+        "status": "advanced"
+      },
+      "reasoning": "New as of Jun 1, 2026 (after May 25 latest rumor). Personal terms agreement represents material escalation from previous 'advanced talks' status. First confirmation Chiefs have reached agreement-level with player."
+    },
+    {
+      "playerId": 7,
+      "playerName": "Isaac Cissé",
+      "rumor": {
+        "date": "May 31, 2026",
+        "club": "Royal Charleroi SC",
+        "detail": "Belgian club scouted Cissé; tabled formal offer after positive evaluation",
+        "source": "Briefly.co.za",
+        "sourceUrl": "https://briefly.co.za/sports/football/243154-isaac-cisse-european-side-join-race-sign-psl-star-links-kaizer-chiefs-orlando-pirates/",
+        "tier": 2,
+        "status": "rumour",
+        "recent": true
+      },
+      "intelUpdates": null,
+      "reasoning": "New as of May 31, 2026 (after Apr 9 latest rumor). First concrete European club interest with scouts deployed and formal offer tabled. Expands club interest from regional African/SA focus to Belgian Pro League."
+    }
+  ],
+  "escalations": [],
+  "noChange": [
+    "Mfundo Vilakazi",
+    "Hubert Gyau",
+    "Mohamed Camara",
+    "Manqoba Mngqithi",
+    "Mduduzi Shabalala"
+  ],
+  "needsReview": [
+    {
+      "playerId": 5,
+      "playerName": "Manqoba Mngqithi",
+      "detail": "May 29 Kick Off report: Motaung Jnr contacted Mngqithi; greenlight to leave Arrows; listed amongst options. May 27 ESPN/Afrik-Foot: no formal approach yet made.",
+      "reason": "Conflicting timeline: May 27 states 'no formal approach' but May 29 states Motaung Jnr made contact and listed him as option. Both dates within 2-day window. May 29 source (Kick Off) appears to reference same contact event as an update but introduces uncertainty on whether 'contact' = 'formal approach.' Already captured in existing rumors (May 29, May 26, May 27, May 25). No material new development beyond existing reporting."
+    }
+  ]
+}
