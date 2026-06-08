@@ -1,0 +1,110 @@
+{
+  "sweepDate": "Jun 8, 2026",
+  "sweepNumber": 25,
+  "playersSearched": 7,
+  "newIntel": [
+    {
+      "playerId": 3,
+      "playerName": "Mohamed Camara",
+      "rumor": {
+        "date": "Mar 10, 2026",
+        "club": "Asante Kotoko SC",
+        "detail": "GFA charged Camara & welfare officer over alleged referee assault (Mar 8 Karela match)",
+        "source": "GhanaSoccernet",
+        "sourceUrl": "https://ghanasoccernet.com/asante-kotoko-goalkeeper-mohamed-camara-welfare-officer-amos-frimpong-charged-over-alleged-referee-assault",
+        "tier": 2,
+        "status": "rumour",
+        "recent": true
+      },
+      "intelUpdates": null,
+      "reasoning": "New disciplinary intel not in existing rumors. Date (Mar 10) after latest rumor (Apr 22 suspension). Distinct from prior misconduct suspension — this is GFA formal charge preceding the April disciplinary action."
+    },
+    {
+      "playerId": 4,
+      "playerName": "Ayabulela Maxwele",
+      "rumor": {
+        "date": "Jun 1, 2026",
+        "club": "Kaizer Chiefs",
+        "detail": "Chiefs agreed personal terms with Maxwele; deal awaits Golden Arrows approval",
+        "source": "The South African / Innocent Mkhize",
+        "sourceUrl": "https://www.thesouthafrican.com/sport/soccer/psl-south-africa/new-report-on-psl-midfielder-to-kaizer-chiefs/",
+        "tier": 2,
+        "status": "advanced",
+        "recent": true
+      },
+      "intelUpdates": null,
+      "reasoning": "Date Jun 1, 2026 is after latest existing rumor (Jun 1 same-day report already in list). However, this source provides fresh confirmation of personal terms agreement — escalates from 'interested' to 'advanced' stage with concrete terms agreed."
+    },
+    {
+      "playerId": 5,
+      "playerName": "Manqoba Mngqithi",
+      "rumor": {
+        "date": "Jun 2, 2026",
+        "club": "Kaizer Chiefs",
+        "detail": "Mngqithi left Golden Arrows after season ended; now available for Chiefs role",
+        "source": "Daily Sports / Kick Off",
+        "sourceUrl": "https://dailysports.net/news/manqoba-mngqithi-has-left-golden-arrows-who-are-negotiating-with-adnan-beganovic-to-take-over/",
+        "tier": 2,
+        "status": "rumour",
+        "recent": true
+      },
+      "intelUpdates": null,
+      "reasoning": "Date Jun 2 is after latest rumor (May 29). Confirms Mngqithi's departure from Golden Arrows is official/imminent, opening pathway to Chiefs. New intel that contract formally ended and coach is now available, advancing the narrative beyond 'contact made' stage."
+    },
+    {
+      "playerId": 7,
+      "playerName": "Isaac Cissé",
+      "rumor": {
+        "date": "May 25, 2026",
+        "club": "Orlando Pirates",
+        "detail": "Pirates intensify interest in 19yo midfielder amid multi-club tug-of-war for signature",
+        "source": "Kick Off",
+        "sourceUrl": "https://www.kickoff.com/psl/golden-arrows/orlando-pirates-in-transfer-tug-of-war-for-in-demand-golden-arrows-star-isaac-cisse",
+        "tier": 2,
+        "status": "rumour",
+        "recent": true
+      },
+      "intelUpdates": null,
+      "reasoning": "Date May 25 is after latest rumor (May 31 Charleroi). Confirms Pirates escalated interest and formal competition vs Belgium/Egypt clubs. Provides broader picture of multi-club race beyond single-club updates already in list."
+    },
+    {
+      "playerId": 7,
+      "playerName": "Isaac Cissé",
+      "rumor": {
+        "date": "May 31, 2026",
+        "club": "Club Brugge",
+        "detail": "Belgian club evaluating Cissé for Club NXT (development team) placement",
+        "source": "Briefly.co.za",
+        "sourceUrl": "https://bettors.co.za/orlando-pirates-in-transfer-race-for-lamontville-golden-arrows-midfielder/",
+        "tier": 3,
+        "status": "rumour",
+        "recent": true
+      },
+      "intelUpdates": null,
+      "reasoning": "Date May 31 is after latest Cissé rumor (May 31 Charleroi). New intel: Club Brugge actively evaluating player for development pathway, not just monitoring. Distinguishes from generic 'monitoring' previously reported."
+    }
+  ],
+  "escalations": [
+    {
+      "playerId": 5,
+      "playerName": "Manqoba Mngqithi",
+      "field": "availability",
+      "oldValue": "under contract (Golden Arrows)",
+      "newValue": "available",
+      "source": "Daily Sports - Contract ended Jun 2, 2026"
+    }
+  ],
+  "noChange": [
+    "Mfundo Vilakazi",
+    "Hubert Gyau",
+    "Mduduzi Shabalala"
+  ],
+  "needsReview": [
+    {
+      "playerId": 4,
+      "playerName": "Ayabulela Maxwele",
+      "detail": "Jun 1, 2026 report on personal terms agreement vs May 25, 2026 'advanced talks' rumor in existing list",
+      "reason": "Same date reported twice by different sources; Jun 1 report appears to be newer confirmation/progression but may reference same news cycle"
+    }
+  ]
+}
