@@ -1,0 +1,72 @@
+{
+  "sweepDate": "Jun 11, 2026",
+  "sweepNumber": 26,
+  "playersSearched": 7,
+  "newIntel": [
+    {
+      "playerId": 4,
+      "playerName": "Ayabulela Maxwele",
+      "rumor": {
+        "date": "Jun 1, 2026",
+        "club": "Kaizer Chiefs",
+        "detail": "Chiefs agreed personal terms with Maxwele; deal dependent on Golden Arrows approval",
+        "source": "The South African / Innocent Mkhize",
+        "sourceUrl": "https://www.thesouthafrican.com/sport/soccer/psl-south-africa/new-report-on-psl-midfielder-to-kaizer-chiefs/",
+        "tier": 2,
+        "status": "advanced",
+        "recent": true
+      },
+      "intelUpdates": null,
+      "reasoning": "Jun 1 date is after latest rumor (Jun 1 existing); confirms advanced status with personal terms agreed but awaiting club approval from Golden Arrows."
+    },
+    {
+      "playerId": 5,
+      "playerName": "Manqoba Mngqithi",
+      "rumor": {
+        "date": "May 29, 2026",
+        "club": "Kaizer Chiefs",
+        "detail": "Motaung Jnr contacted Mngqithi; greenlight to leave Arrows per prior agreement",
+        "source": "Kick Off",
+        "sourceUrl": "https://www.kickoff.com/psl/kaizer-chiefs/manqoba-mngqithi-back-in-line-for-kaizer-chiefs",
+        "tier": 2,
+        "status": "advanced",
+        "recent": true
+      },
+      "intelUpdates": null,
+      "reasoning": "May 29 date is after latest rumor (May 27); confirms official contact and greenlight from Arrows, advancing from speculative interest to active pursuit."
+    },
+    {
+      "playerId": 7,
+      "playerName": "Isaac Cissé",
+      "rumor": {
+        "date": "Jun 10, 2026",
+        "club": "Orlando Pirates",
+        "detail": "Transfer deal signed and sealed; move away from Golden Arrows confirmed officially",
+        "source": "KickOff",
+        "sourceUrl": "https://www.kickoff.com/news/sanews/isaac-cisse-has-been-a-subject-of-speculation-pertaining-his-future-at-golden-arrows",
+        "tier": 2,
+        "status": "confirmed",
+        "recent": true
+      },
+      "intelUpdates": null,
+      "reasoning": "Jun 10 date is newest intel; confirmation of deal being signed escalates from rumor/advanced to confirmed status with Pirates being identified destination."
+    }
+  ],
+  "escalations": [
+    {
+      "playerId": 7,
+      "playerName": "Isaac Cissé",
+      "field": "status",
+      "oldValue": "rumour",
+      "newValue": "confirmed",
+      "source": "KickOff, Jun 10, 2026"
+    }
+  ],
+  "noChange": [
+    "Mfundo Vilakazi",
+    "Hubert Gyau",
+    "Mohamed Camara",
+    "Mduduzi Shabalala"
+  ],
+  "needsReview": []
+}
