@@ -1,0 +1,65 @@
+{
+  "sweepDate": "Jun 15, 2026",
+  "sweepNumber": 27,
+  "playersSearched": 8,
+  "newIntel": [
+    {
+      "playerId": 5,
+      "playerName": "Manqoba Mngqithi",
+      "rumor": {
+        "date": "May 29, 2026",
+        "club": "Kaizer Chiefs",
+        "detail": "Motaung Jnr contacted Mngqithi; greenlight to leave Arrows per prior agreement",
+        "source": "Kick Off",
+        "sourceUrl": "https://www.kickoff.com/psl/kaizer-chiefs/manqoba-mngqithi-back-in-line-for-kaizer-chiefs",
+        "tier": 2,
+        "status": "advanced",
+        "recent": true
+      },
+      "intelUpdates": null,
+      "reasoning": "Latest rumor dated May 27, 2026. This May 29 report represents new escalation: direct contact by Chiefs SD Motaung Jnr to Mngqithi, moving beyond prior 'no formal approach' status to confirmed contact and greenlight agreement. Passes date gate and represents genuinely new development."
+    },
+    {
+      "playerId": 7,
+      "playerName": "Isaac Cissé",
+      "rumor": {
+        "date": "Jun 10, 2026",
+        "club": "Orlando Pirates",
+        "detail": "Transfer deal signed and sealed; move away from Golden Arrows confirmed officially",
+        "source": "KickOff",
+        "sourceUrl": "https://www.thesouthafrican.com/sport/soccer/psl-south-africa/transfer-news-orlando-pirates-to-announce-5th-signing/",
+        "tier": 2,
+        "status": "official",
+        "recent": true
+      },
+      "intelUpdates": {
+        "status": "official",
+        "currentClub": "Orlando Pirates"
+      },
+      "reasoning": "Latest existing rumor dated Jun 10, 2026 ('deal signed and sealed'). Research confirms official unveiling by Orlando Pirates with multiple YouTube sources from 1-2 weeks ago showing official unveiling. This escalates from 'confirmed' (Jun 10) to 'official' with club announcement evidence. Most recent development."
+    }
+  ],
+  "escalations": [],
+  "noChange": [
+    "Mfundo Vilakazi",
+    "Hubert Gyau",
+    "Mohamed Camara",
+    "Ayabulela Maxwele",
+    "Mduduzi Shabalala",
+    "Shandre Miguel Campbell"
+  ],
+  "needsReview": [
+    {
+      "playerId": 3,
+      "playerName": "Mohamed Camara",
+      "detail": "Pre-contract agreement with Sekhukhune United signed (Apr 15, 2026); contract expires Jun 30, 2026",
+      "reason": "Existing rumors already contain Apr 15, 2026 pre-contract with Sekhukhune. No new intel found beyond existing record. Deal likely finalized by Jun 15 but no confirmation article after Apr 15 found in sweep."
+    },
+    {
+      "playerId": 4,
+      "playerName": "Ayabulela Maxwele",
+      "detail": "Chiefs made progress in pursuit (Jun 2, 2026) but Pirates remain leading favorite",
+      "reason": "Jun 2 report marginally newer than latest May 25 advanced talks rumor, but represents minor iteration of existing storyline (Chiefs interest) rather than new development. Pirates still leading per same source."
+    }
+  ]
+}
