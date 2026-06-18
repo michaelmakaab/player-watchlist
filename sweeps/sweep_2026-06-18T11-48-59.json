@@ -1,0 +1,89 @@
+{
+  "sweepDate": "Jun 18, 2026",
+  "sweepNumber": 28,
+  "playersSearched": 8,
+  "newIntel": [
+    {
+      "playerId": 4,
+      "playerName": "Ayabulela Maxwele",
+      "rumor": {
+        "date": "Jun 1, 2026",
+        "club": "Kaizer Chiefs",
+        "detail": "Chiefs agreed personal terms with Maxwele; deal dependent on Golden Arrows approval",
+        "source": "The South African / Innocent Mkhize",
+        "sourceUrl": "https://www.thesouthafrican.com/sport/soccer/psl-south-africa/new-report-on-psl-midfielder-to-kaizer-chiefs/",
+        "tier": 2,
+        "status": "advanced",
+        "recent": true
+      },
+      "intelUpdates": null,
+      "reasoning": "Latest development beyond May 25 Pirates advanced talks; confirms Chiefs personal terms agreement as of Jun 1, 2026. Advances negotiation status from competing clubs to concrete Chief terms."
+    },
+    {
+      "playerId": 7,
+      "playerName": "Isaac Cissé",
+      "rumor": {
+        "date": "Jun 10, 2026",
+        "club": "Orlando Pirates",
+        "detail": "Transfer deal signed and sealed; move from Golden Arrows confirmed officially",
+        "source": "KickOff",
+        "sourceUrl": "https://www.kickoff.com/psl/golden-arrows/orlando-pirates-in-transfer-tug-of-war-for-in-demand-golden-arrows-star-isaac-cisse",
+        "tier": 2,
+        "status": "confirmed",
+        "recent": true
+      },
+      "intelUpdates": {
+        "Current Club": "Orlando Pirates"
+      },
+      "reasoning": "Confirmation of completed transfer beyond May 31 Charleroi and Club Brugge evaluation reports. Status escalated from advanced multi-club interest to confirmed deal with Pirates as of Jun 10, 2026."
+    },
+    {
+      "playerId": 8,
+      "playerName": "Shandre Miguel Campbell",
+      "rumor": {
+        "date": "May 14, 2026",
+        "club": "Club Brugge",
+        "detail": "Red card setback; SAFA criticized Club Brugge for not delivering promised playing minutes",
+        "source": "Goal.com South Africa",
+        "sourceUrl": "https://www.goal.com/en-za/player/s-campbell/news/dfy8wmt4li6v2a3ulhftrxr10",
+        "tier": 2,
+        "status": "rumour",
+        "recent": true
+      },
+      "intelUpdates": null,
+      "reasoning": "First intel for Shandre Campbell beyond Sep 2025 NAC Breda loan interest. New development on club friction and playing time disputes; red card and SAFA criticism provide context on contract situation at Brugge."
+    }
+  ],
+  "escalations": [
+    {
+      "playerId": 7,
+      "playerName": "Isaac Cissé",
+      "field": "status",
+      "oldValue": "advanced",
+      "newValue": "confirmed",
+      "source": "KickOff (Jun 10, 2026)"
+    },
+    {
+      "playerId": 7,
+      "playerName": "Isaac Cissé",
+      "field": "Current Club",
+      "oldValue": "Lamontville Golden Arrows FC",
+      "newValue": "Orlando Pirates",
+      "source": "KickOff (Jun 10, 2026)"
+    }
+  ],
+  "noChange": [
+    "Mfundo Obrigado Vilakazi",
+    "Hubert Gyau",
+    "Mohamed Camara",
+    "Mduduzi Shabalala"
+  ],
+  "needsReview": [
+    {
+      "playerId": 5,
+      "playerName": "Manqoba Mngqithi",
+      "detail": "Mngqithi officially departed Golden Arrows; Motaung Jnr contacted; listed as front-runner for Chiefs job",
+      "reason": "Auto-rejected: Detail too long (104 chars, max 100)"
+    }
+  ]
+}

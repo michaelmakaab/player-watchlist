@@ -1,7 +1,7 @@
 {
   "meta": {
-    "lastSweep": "Jun 18, 2026",
-    "sweepNumber": 28,
+    "lastSweep": "Jun 15, 2026",
+    "sweepNumber": 27,
     "playerCount": 8
   },
   "players": [
@@ -937,16 +937,6 @@
       "altSpellings": [],
       "confusionRisk": null,
       "rumors": [
-        {
-          "date": "May 14, 2026",
-          "club": "Club Brugge",
-          "detail": "Red card setback; SAFA criticized Club Brugge for not delivering promised playing minutes",
-          "source": "Goal.com South Africa",
-          "sourceUrl": "https://www.goal.com/en-za/player/s-campbell/news/dfy8wmt4li6v2a3ulhftrxr10",
-          "tier": 2,
-          "status": "rumour",
-          "recent": true
-        },
         {
           "date": "Sep 01, 2025",
           "club": "NAC Breda",
