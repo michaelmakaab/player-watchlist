@@ -1,7 +1,7 @@
 {
   "meta": {
-    "lastSweep": "Jun 22, 2026",
-    "sweepNumber": 29,
+    "lastSweep": "Jun 18, 2026",
+    "sweepNumber": 28,
     "playerCount": 8
   },
   "players": [
@@ -536,16 +536,6 @@
       "altSpellings": [],
       "confusionRisk": null,
       "rumors": [
-        {
-          "date": "Jun 17, 2026",
-          "club": "Kaizer Chiefs",
-          "detail": "Parted ways with Golden Arrows; Chiefs front-runner for vacant coaching role",
-          "source": "Vodacom Soccer / KickOff",
-          "sourceUrl": "https://www.kickoff.com",
-          "tier": 2,
-          "status": "advanced",
-          "recent": true
-        },
         {
           "date": "Jun 2, 2026",
           "club": "Kaizer Chiefs",
