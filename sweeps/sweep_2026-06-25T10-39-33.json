@@ -1,0 +1,67 @@
+{
+  "sweepDate": "Jun 25, 2026",
+  "sweepNumber": 30,
+  "playersSearched": 8,
+  "newIntel": [
+    {
+      "playerId": 5,
+      "playerName": "Manqoba Mngqithi",
+      "rumor": {
+        "date": "Jun 2, 2026",
+        "club": "Kaizer Chiefs",
+        "detail": "Mngqithi parted ways with Golden Arrows; considered as assistant coach at Chiefs",
+        "source": "Goal.com South Africa",
+        "sourceUrl": "https://www.goal.com/en-za/lists/agent-outlines-next-steps-for-former-mamelodi-sundowns-coach-manqoba-mngqithi-after-confirming-golden-arrows-departure-the-decision-is-amicable/",
+        "tier": 2,
+        "status": "advanced",
+        "recent": true
+      },
+      "intelUpdates": {
+        "currentClub": "Available",
+        "status": "open to offers"
+      },
+      "reasoning": "Official confirmation of Arrows departure (Jun 2) post-dates latest existing rumor (Jun 17 parted ways report); clarifies assistant rather than head coach role at Chiefs"
+    },
+    {
+      "playerId": 7,
+      "playerName": "Isaac Cissé",
+      "rumor": {
+        "date": "Jun 10, 2026",
+        "club": "Orlando Pirates",
+        "detail": "Transfer deal signed and sealed with Orlando Pirates; officially completed",
+        "source": "KickOff",
+        "sourceUrl": "https://www.kickoff.com/psl/golden-arrows/orlando-pirates-in-transfer-tug-of-war-for-in-demand-golden-arrows-star-isaac-cisse",
+        "tier": 2,
+        "status": "official",
+        "recent": true
+      },
+      "intelUpdates": {
+        "currentClub": "Orlando Pirates",
+        "status": "official"
+      },
+      "reasoning": "Most recent existing rumor was May 25, 2026 (Pirates joining tug-of-war). Jun 10 deal confirmation represents material status escalation from advanced talks to official completed transfer"
+    }
+  ],
+  "escalations": [],
+  "noChange": [
+    "Hubert Gyau",
+    "Mohamed Camara",
+    "Ayabulela Maxwele",
+    "Mduduzi Shabalala",
+    "Shandre Miguel Campbell"
+  ],
+  "needsReview": [
+    {
+      "playerId": 4,
+      "playerName": "Ayabulela Maxwele",
+      "detail": "Chiefs agreed personal terms per Innocent Mkhize report; deal dependent on Golden Arrows approval",
+      "reason": "Jun 1 report already in existing rumors; no newer intel found in research (report same as May 25 advanced talks status)"
+    },
+    {
+      "playerId": 1,
+      "playerName": "Mfundo Vilakazi",
+      "detail": "Technical staff believe Vilakazi needs physical development to reach next level",
+      "reason": "Auto-rejected: Name mismatch: API returned \"Mfundo Vilakazi\" but ID 1 is \"Mfundo Obrigado Vilakazi\""
+    }
+  ]
+}

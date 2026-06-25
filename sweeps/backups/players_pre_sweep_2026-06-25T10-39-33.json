@@ -1,7 +1,7 @@
 {
   "meta": {
-    "lastSweep": "Jun 25, 2026",
-    "sweepNumber": 30,
+    "lastSweep": "Jun 22, 2026",
+    "sweepNumber": 29,
     "playerCount": 8
   },
   "players": [
@@ -537,16 +537,6 @@
       "confusionRisk": null,
       "rumors": [
         {
-          "date": "Jun 2, 2026",
-          "club": "Kaizer Chiefs",
-          "detail": "Mngqithi parted ways with Golden Arrows; considered as assistant coach at Chiefs",
-          "source": "Goal.com South Africa",
-          "sourceUrl": "https://www.goal.com/en-za/lists/agent-outlines-next-steps-for-former-mamelodi-sundowns-coach-manqoba-mngqithi-after-confirming-golden-arrows-departure-the-decision-is-amicable/",
-          "tier": 2,
-          "status": "advanced",
-          "recent": true
-        },
-        {
           "date": "Jun 17, 2026",
           "club": "Kaizer Chiefs",
           "detail": "Parted ways with Golden Arrows; Chiefs front-runner for vacant coaching role",
@@ -842,16 +832,6 @@
       ],
       "confusionRisk": "Isaac Cissé (b.1994, Forward) - older Ivorian player with same name but distinguishable by birth year, position, and club",
       "rumors": [
-        {
-          "date": "Jun 10, 2026",
-          "club": "Orlando Pirates",
-          "detail": "Transfer deal signed and sealed with Orlando Pirates; officially completed",
-          "source": "KickOff",
-          "sourceUrl": "https://www.kickoff.com/psl/golden-arrows/orlando-pirates-in-transfer-tug-of-war-for-in-demand-golden-arrows-star-isaac-cisse",
-          "tier": 2,
-          "status": "official",
-          "recent": true
-        },
         {
           "date": "Jun 10, 2026",
           "club": "Orlando Pirates",
