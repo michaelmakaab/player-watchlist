@@ -1,7 +1,7 @@
 {
   "meta": {
-    "lastSweep": "Jun 29, 2026",
-    "sweepNumber": 31,
+    "lastSweep": "Jun 25, 2026",
+    "sweepNumber": 30,
     "playerCount": 8
   },
   "players": [
@@ -537,16 +537,6 @@
       "confusionRisk": null,
       "rumors": [
         {
-          "date": "Jun 22, 2026",
-          "club": "Kaizer Chiefs",
-          "detail": "Emerged as potential assistant coach candidate under new head coach Fernando da Cruz",
-          "source": "Africa Soccer",
-          "sourceUrl": "https://africasoccer.com/manqoba-mngqithi-emerges-as-candidate-for-kaizer-chiefs-assistant-coach-role/",
-          "tier": 2,
-          "status": "rumour",
-          "recent": true
-        },
-        {
           "date": "Jun 2, 2026",
           "club": "Kaizer Chiefs",
           "detail": "Mngqithi parted ways with Golden Arrows; considered as assistant coach at Chiefs",
@@ -852,16 +842,6 @@
       ],
       "confusionRisk": "Isaac Cissé (b.1994, Forward) - older Ivorian player with same name but distinguishable by birth year, position, and club",
       "rumors": [
-        {
-          "date": "Jun 25, 2026",
-          "club": "Royal Charleroi SC",
-          "detail": "Agreement reached with Belgian club; personal terms agreed. Deal supersedes Pirates interest",
-          "source": "KickOff",
-          "sourceUrl": "https://www.kickoff.com/psl/premiership/orlando-pirates-miss-out-as-isaac-cisse-agrees-move-to-belgium-s-royal-charleroi-sc",
-          "tier": 2,
-          "status": "confirmed",
-          "recent": true
-        },
         {
           "date": "Jun 10, 2026",
           "club": "Orlando Pirates",
