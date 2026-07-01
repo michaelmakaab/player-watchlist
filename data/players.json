@@ -1,7 +1,7 @@
 {
   "meta": {
-    "lastSweep": "Jun 29, 2026",
-    "sweepNumber": 31,
+    "lastSweep": "Jul 1, 2026",
+    "sweepNumber": 32,
     "playerCount": 8
   },
   "players": [
@@ -146,6 +146,16 @@
       "altSpellings": [],
       "confusionRisk": null,
       "rumors": [
+        {
+          "date": "Jun 2026",
+          "club": "Asante Kotoko (staying)",
+          "detail": "Agency Prosport (Mike Makaab) clarified NO official offers received from any club and denied Orlando Pirates contact; Kotoko rejected bids and insist he stays. Danish (Midtjylland/Randers) + Azam interest persists but unadvanced.",
+          "source": "Soccer Laduma / ModernGhana",
+          "sourceUrl": "https://www.soccerladuma.co.za/psl/kaizer-chiefs/agent-clarifies-gyau-situation-amid-chiefs-interest",
+          "tier": 2,
+          "status": "rumour",
+          "recent": true
+        },
         {
           "date": "May 9, 2026",
           "club": "Orlando Pirates / Kaizer Chiefs",
