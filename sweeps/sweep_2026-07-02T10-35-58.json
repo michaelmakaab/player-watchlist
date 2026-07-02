@@ -1,0 +1,33 @@
+{
+  "sweepDate": "Jul 2, 2026",
+  "sweepNumber": 33,
+  "playersSearched": 8,
+  "newIntel": [],
+  "escalations": [
+    {
+      "playerId": 8,
+      "playerName": "Isaac Cissé",
+      "field": "status",
+      "oldValue": "advanced",
+      "newValue": "confirmed",
+      "source": "KickOff (Jul 2, 2026)"
+    }
+  ],
+  "noChange": [
+    "Mfundo Vilakazi",
+    "Hubert Gyau",
+    "Mohamed Camara",
+    "Ayabulela Maxwele",
+    "Manqoba Mngqithi",
+    "Mduduzi Shabalala",
+    "Shandre Miguel Campbell"
+  ],
+  "needsReview": [
+    {
+      "playerId": 8,
+      "playerName": "Isaac Cissé",
+      "detail": "Back in Durban for pre-season; awaiting visa clearance before joining Charleroi",
+      "reason": "Auto-rejected: Name mismatch: API returned \"Isaac Cissé\" but ID 8 is \"Shandre Miguel Campbell\""
+    }
+  ]
+}
