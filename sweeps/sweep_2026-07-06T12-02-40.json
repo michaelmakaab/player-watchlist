@@ -1,0 +1,64 @@
+{
+  "sweepDate": "Jul 6, 2026",
+  "sweepNumber": 34,
+  "playersSearched": 8,
+  "newIntel": [
+    {
+      "playerId": 5,
+      "playerName": "Manqoba Mngqithi",
+      "rumor": {
+        "date": "Jun 22, 2026",
+        "club": "Kaizer Chiefs",
+        "detail": "Confirmed departure from Golden Arrows; being considered for Chiefs assistant coach role",
+        "source": "Africa Soccer",
+        "sourceUrl": "https://www.goal.com/en-za/lists/agent-outlines-next-steps-for-former-mamelodi-sundowns-coach-manqoba-mngqithi-after-confirming-golden-arrows-departure",
+        "tier": 2,
+        "status": "advanced",
+        "recent": true
+      },
+      "intelUpdates": {
+        "status": "advanced",
+        "detail": "Agent Mike Makaab officially confirmed Mngqithi departure from Golden Arrows at season end; evaluating Chiefs assistant role alongside international options"
+      },
+      "reasoning": "New confirmation from agent (Jun 22) after latest rumor (Jun 17). Official departure confirmed + advanced discussion of Chiefs assistant position qualifies as newer intel beyond existing speculative interest."
+    },
+    {
+      "playerId": 7,
+      "playerName": "Isaac Cissé",
+      "rumor": {
+        "date": "Jun 25, 2026",
+        "club": "Royal Charleroi SC",
+        "detail": "Agreement reached with Belgian club; personal terms agreed. Move to Europe confirmed.",
+        "source": "KickOff",
+        "sourceUrl": "https://www.kickoff.com/psl/premiership/orlando-pirates-miss-out-as-isaac-cisse-agrees-move-to-belgium-s-royal-charleroi-sc",
+        "tier": 2,
+        "status": "confirmed",
+        "recent": true
+      },
+      "intelUpdates": {
+        "status": "confirmed",
+        "detail": "Royal Charleroi SC deal confirmed; personal terms agreed with Belgian outfit after Pirates missed out on signature"
+      },
+      "reasoning": "Jun 25 date (after latest Jun 10 rumor of Pirates deal) supersedes previous Pirates information. Confirmed agreement with Charleroi is materially new intel showing deal progression and destination change."
+    }
+  ],
+  "escalations": [
+    {
+      "playerId": 7,
+      "playerName": "Isaac Cissé",
+      "field": "status",
+      "oldValue": "confirmed",
+      "newValue": "confirmed",
+      "source": "KickOff (Jun 25, 2026)"
+    }
+  ],
+  "noChange": [
+    "Mfundo Vilakazi",
+    "Hubert Gyau",
+    "Mohamed Camara",
+    "Ayabulela Maxwele",
+    "Mduduzi Shabalala",
+    "Shandre Miguel Campbell"
+  ],
+  "needsReview": []
+}
