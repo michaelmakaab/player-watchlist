@@ -1,7 +1,7 @@
 {
   "meta": {
-    "lastSweep": "Jul 6, 2026",
-    "sweepNumber": 34,
+    "lastSweep": "Jul 2, 2026",
+    "sweepNumber": 33,
     "playerCount": 8
   },
   "players": [
@@ -546,16 +546,6 @@
       "altSpellings": [],
       "confusionRisk": null,
       "rumors": [
-        {
-          "date": "Jun 22, 2026",
-          "club": "Kaizer Chiefs",
-          "detail": "Confirmed departure from Golden Arrows; being considered for Chiefs assistant coach role",
-          "source": "Africa Soccer",
-          "sourceUrl": "https://www.goal.com/en-za/lists/agent-outlines-next-steps-for-former-mamelodi-sundowns-coach-manqoba-mngqithi-after-confirming-golden-arrows-departure",
-          "tier": 2,
-          "status": "advanced",
-          "recent": true
-        },
         {
           "date": "Jun 22, 2026",
           "club": "Kaizer Chiefs",
