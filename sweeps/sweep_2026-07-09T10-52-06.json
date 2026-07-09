@@ -1,0 +1,52 @@
+{
+  "sweepDate": "Jul 9, 2026",
+  "sweepNumber": 35,
+  "playersSearched": 8,
+  "newIntel": [
+    {
+      "playerId": 7,
+      "playerName": "Isaac Cissé",
+      "rumor": {
+        "date": "Jul 3, 2026",
+        "club": "Royal Charleroi SC",
+        "detail": "Deal confirmed: Cissé joining Belgian Charleroi; visa delays only remaining issue.",
+        "source": "iDiski Times",
+        "sourceUrl": null,
+        "tier": 2,
+        "status": "confirmed",
+        "recent": true
+      },
+      "intelUpdates": {
+        "status": "confirmed"
+      },
+      "reasoning": "Jun 25 rumor showed agreement reached; Jul 3 article confirms deal finalized with visa as only procedural delay. Escalates from 'advanced' to 'confirmed' status based on post-agreement confirmation."
+    }
+  ],
+  "escalations": [
+    {
+      "playerId": 7,
+      "playerName": "Isaac Cissé",
+      "field": "status",
+      "oldValue": "advanced",
+      "newValue": "confirmed",
+      "source": "iDiski Times (Jul 3, 2026)"
+    }
+  ],
+  "noChange": [
+    "Mfundo Vilakazi",
+    "Hubert Gyau",
+    "Mohamed Camara",
+    "Ayabulela Maxwele",
+    "Manqoba Mngqithi",
+    "Mduduzi Shabalala",
+    "Shandre Miguel Campbell"
+  ],
+  "needsReview": [
+    {
+      "playerId": 3,
+      "playerName": "Mohamed Camara",
+      "detail": "Contract expired Jun 30, 2026; current club status unknown as of Jul 9, 2026.",
+      "reason": "Contract expiry date (Jun 30, 2026) has passed. No post-expiry transfer news found. Pre-contract agreement with Sekhukhune was signed Apr 15, 2026 (advanced stage), but no confirmation of completion found in research. Current whereabouts and contract status require clarification."
+    }
+  ]
+}
