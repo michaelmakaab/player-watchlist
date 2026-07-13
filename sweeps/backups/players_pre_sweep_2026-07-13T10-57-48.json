@@ -1,7 +1,7 @@
 {
   "meta": {
-    "lastSweep": "Jul 13, 2026",
-    "sweepNumber": 36,
+    "lastSweep": "Jul 9, 2026",
+    "sweepNumber": 35,
     "playerCount": 8
   },
   "players": [
@@ -547,16 +547,6 @@
       "confusionRisk": null,
       "rumors": [
         {
-          "date": "Jul 11, 2026",
-          "club": "Young Africans (Yanga)",
-          "detail": "Appointed head coach of Tanzanian giants Young Africans, replacing Pedro Gonçalves",
-          "source": "iDiski Times",
-          "sourceUrl": null,
-          "tier": 2,
-          "status": "official",
-          "recent": true
-        },
-        {
           "date": "Jun 22, 2026",
           "club": "Kaizer Chiefs",
           "detail": "Confirmed departure from Golden Arrows; being considered for Chiefs assistant coach role",
@@ -882,16 +872,6 @@
       ],
       "confusionRisk": "Isaac Cissé (b.1994, Forward) - older Ivorian player with same name but distinguishable by birth year, position, and club",
       "rumors": [
-        {
-          "date": "Jul 3, 2026",
-          "club": "Royal Charleroi SC",
-          "detail": "Transfer confirmed to Belgian club Royal Charleroi SC; visa processed and deal finalized",
-          "source": "iDiski Times",
-          "sourceUrl": null,
-          "tier": 2,
-          "status": "official",
-          "recent": true
-        },
         {
           "date": "Jul 3, 2026",
           "club": "Royal Charleroi SC",

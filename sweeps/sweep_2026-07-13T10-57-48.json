@@ -1,0 +1,88 @@
+{
+  "sweepDate": "Jul 13, 2026",
+  "sweepNumber": 36,
+  "playersSearched": 8,
+  "newIntel": [
+    {
+      "playerId": 5,
+      "playerName": "Manqoba Mngqithi",
+      "rumor": {
+        "date": "Jul 11, 2026",
+        "club": "Young Africans (Yanga)",
+        "detail": "Appointed head coach of Tanzanian giants Young Africans, replacing Pedro Gonçalves",
+        "source": "iDiski Times",
+        "sourceUrl": null,
+        "tier": 2,
+        "status": "official",
+        "recent": true
+      },
+      "intelUpdates": {
+        "currentClub": "Young Africans (Yanga)",
+        "position": "Head Coach"
+      },
+      "reasoning": "Major development: Mngqithi departed Golden Arrows and secured new role at Yanga. Published Jul 11, 2026 (after latest rumor of Jun 22). Kaizer Chiefs move did not materialize. Official appointment status warrants inclusion as escalation from coaching candidate to confirmed appointment."
+    },
+    {
+      "playerId": 7,
+      "playerName": "Isaac Cissé",
+      "rumor": {
+        "date": "Jul 3, 2026",
+        "club": "Royal Charleroi SC",
+        "detail": "Transfer confirmed to Belgian club Royal Charleroi SC; visa processed and deal finalized",
+        "source": "iDiski Times",
+        "sourceUrl": null,
+        "tier": 2,
+        "status": "official",
+        "recent": true
+      },
+      "intelUpdates": {
+        "currentClub": "Royal Charleroi SC"
+      },
+      "reasoning": "Latest rumor was Jul 3, 2026 (iDiski Times: 'confirmed'). New search results confirm deal is finalized with visa processed. Status escalates from 'confirmed' (deal agreed) to 'official' (player departed/club announced). Published after Jun 25 rumor, represents final completion of transfer."
+    }
+  ],
+  "escalations": [
+    {
+      "playerId": 5,
+      "playerName": "Manqoba Mngqithi",
+      "field": "currentClub",
+      "oldValue": "Lamontville Golden Arrows",
+      "newValue": "Young Africans (Yanga)"
+    },
+    {
+      "playerId": 7,
+      "playerName": "Isaac Cissé",
+      "field": "currentClub",
+      "oldValue": "Lamontville Golden Arrows FC",
+      "newValue": "Royal Charleroi SC"
+    }
+  ],
+  "noChange": [
+    "Mfundo Vilakazi",
+    "Hubert Gyau",
+    "Mohamed Camara",
+    "Ayabulela Maxwele",
+    "Mduduzi Shabalala",
+    "Shandre Miguel Campbell"
+  ],
+  "needsReview": [
+    {
+      "playerId": 1,
+      "playerName": "Mfundo Vilakazi",
+      "detail": "Social media repost hinting at frustration over limited opportunities (May 1, 2026)",
+      "reason": "Cryptic social media activity is speculative and not concrete transfer intel. No formal activity. Would be T4 at best; does not meet newsworthiness threshold for watchlist."
+    },
+    {
+      "playerId": 3,
+      "playerName": "Mohamed Camara",
+      "detail": "Contract expired Jun 30, 2026; pre-contract with Sekhukhune United reported Apr 15, 2026",
+      "reason": "Contract expiration is confirmed but no official club announcement post-Jun 30 found. Pre-contract agreement with Sekhukhune (Apr 15) is already in existing rumors. Requires verification of actual signing/club announcement to escalate status."
+    },
+    {
+      "playerId": 4,
+      "playerName": "Ayabulela Maxwele",
+      "detail": "Kaizer Chiefs agreed personal terms (Jun 1, 2026); deal dependent on Golden Arrows approval",
+      "reason": "This rumor is already in existing dataset (Jun 1, 2026, The South African). No newer intel found beyond this date. Maxwele status remains 'advanced' (personal terms agreed, club approval pending)."
+    }
+  ]
+}
