@@ -1,0 +1,76 @@
+{
+  "sweepDate": "Jul 16, 2026",
+  "sweepNumber": 37,
+  "playersSearched": 8,
+  "newIntel": [
+    {
+      "playerId": 5,
+      "playerName": "Manqoba Mngqithi",
+      "rumor": {
+        "date": "Jul 11, 2026",
+        "club": "Young Africans",
+        "detail": "Officially appointed head coach of Tanzanian giants Young Africans; signed two-year contract",
+        "source": "iDiski Times / The South African",
+        "sourceUrl": "https://iol.co.za",
+        "tier": 2,
+        "status": "official",
+        "recent": true
+      },
+      "intelUpdates": {
+        "currentClub": "Young Africans",
+        "status": "official"
+      },
+      "reasoning": "Official announcement of Mngqithi's appointment (Jul 11, 2026) is after his last rumor date (Jul 11, 2026 Yanga appointment). This confirms the move with contract details and represents a material status upgrade from 'advanced' to 'official'"
+    },
+    {
+      "playerId": 7,
+      "playerName": "Isaac Cissé",
+      "rumor": {
+        "date": "Jul 13, 2026",
+        "club": "Royal Charleroi SC",
+        "detail": "Left South Africa to complete transfer to Belgian Pro League side Royal Charleroi SC",
+        "source": "iDiski Times",
+        "sourceUrl": "https://www.idiskitimes.co.za",
+        "tier": 2,
+        "status": "confirmed",
+        "recent": true
+      },
+      "intelUpdates": {
+        "currentClub": "Royal Charleroi SC",
+        "status": "confirmed"
+      },
+      "reasoning": "Jul 13, 2026 report confirms Cissé has departed Golden Arrows and completed move to Belgium (post Jul 3, 2026 previous confirmation). Latest intel provides departure confirmation and journey completion details"
+    }
+  ],
+  "escalations": [
+    {
+      "playerId": 7,
+      "playerName": "Isaac Cissé",
+      "field": "currentClub",
+      "oldValue": "Lamontville Golden Arrows FC",
+      "newValue": "Royal Charleroi SC",
+      "source": "iDiski Times (Jul 13, 2026)"
+    }
+  ],
+  "noChange": [
+    "Hubert Gyau",
+    "Mohamed Camara",
+    "Ayabulela Maxwele",
+    "Mduduzi Shabalala",
+    "Shandre Miguel Campbell"
+  ],
+  "needsReview": [
+    {
+      "playerId": 3,
+      "playerName": "Mohamed Camara",
+      "detail": "Pre-contract agreement with Sekhukhune United reported April 15, 2026; contract expires June 30, 2026 (today is Jul 16)",
+      "reason": "Camara's contract expired on June 30, 2026. The Sekhukhune pre-contract should be finalized by now, but no confirmation of official move found in July 2026 search results. Status may require escalation to 'official' if deal completed post-June 30"
+    },
+    {
+      "playerId": 1,
+      "playerName": "Mfundo Vilakazi",
+      "detail": "Scored in 2-0 win vs Magesi FC in recent Premier Soccer League match",
+      "reason": "Auto-rejected: Name mismatch: API returned \"Mfundo Vilakazi\" but ID 1 is \"Mfundo Obrigado Vilakazi\""
+    }
+  ]
+}
